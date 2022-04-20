@@ -7,19 +7,32 @@
         <!-- <link rel="stylesheet" href="home.css"> <link rel="preconnect" href="https://fonts.googleapis.com"> -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/nav.css">
 <head > 
-    <div class="topnav">
-      <a class="active" href="home.html">Home</a>
-      <a href="credit_card.html">Cards</a>
-      <a  href="fd_loan.html">Investment</a>
-      <a   href="trans.html">Transaction</a>
   </div>
 </head>
 <body>
+  <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
     <div class="container">  
     </div>
 </body>
-
+<div class="wrapper">
+  <div class="sidenav">
+      <h1><b>KJSC BANK</b></h1>
+          <a href="home.html" class="active"><b>Home</b></a>
+          <button class="dropdown-btn"><i class="fas fa-caret-down"></i> Cards
+          </button>
+          <div class="dropdown-container">
+            <a href="credit_card_form.html"><b>Credit Card</b></a>
+            <a href="debit_card_form.html"><b>Debit Card</b></a>
+          </div>
+          <button class="dropdown-btn"><i class="fas fa-caret-down"></i> FD/Loan
+          </button>
+          <div class="dropdown-container">
+            <a href="fd_form.html"><b>Fixed Deposit</b></a>
+            <a href="#"><b>Loan</b></a>
+          </div>
+  </div>
 <style>
 * {box-sizing: border-box;}
 .mySlides {display: none;
@@ -36,7 +49,8 @@ img{
 
 
 body {
-    background-color:#b4c2c2;
+    background-color:#360e24;
+    box-sizing: border-box;
 }
 img {vertical-align: middle;}
 
@@ -48,6 +62,10 @@ img {vertical-align: middle;}
 
 }
 
+img{
+  height: 720px;
+  width: 85%;
+}
 
 /* Caption text */
 .text {
@@ -92,17 +110,17 @@ img {vertical-align: middle;}
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="/images/1.png" width="1000" height="600">
+  <img src="/images/1.png">
 
 </div>
 
 <div class="mySlides fade">
-  <img src="/images/2.png" width="1000" height="600">
+  <img src="/images/2.png">
   
 </div>
 
 <div class="mySlides fade">
-  <img src="/images/3.png" width="1000" height="600">
+  <img src="/images/3.png">
  
 </div>
 
@@ -134,6 +152,21 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 2000); 
+}
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
 }
 </script>
 </body>
