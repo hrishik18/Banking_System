@@ -2,6 +2,7 @@ body {
     background-image: url("/images/Cred_form.png");
     background-repeat: no-repeat;
     background-size: 1540px 754px; 
+    display:contents !important;
    }
 
 .container

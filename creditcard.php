@@ -3,10 +3,11 @@
 
 <head>
     <title>Credit Card</title>
-    <link rel="stylesheet" href="styles/form_c.css">
+ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles\form_c.css">
     <style>
         .error {
             color: #FF0001;
@@ -17,7 +18,8 @@
     </style>
 </head>
 
-<body>
+<body style={
+    display: contents;}>
 
     <?php
     $contactErr = $fnameErr = $lnameErr = $custidErr = $maxlimitErr = "";
