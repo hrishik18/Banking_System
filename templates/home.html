@@ -23,6 +23,7 @@
   <div class="sidenav">
     <h1><b>KJSC BANK</b></h1>
     <a href="home.html" class="active"><b>Home</b></a>
+
     <button class="dropdown-btn"><i class="fas fa-caret-down"></i> Cards
     </button>
 
@@ -36,182 +37,225 @@
 
     <div class="dropdown-container">
       <button class="dropbtn" id="deb">Debit Card</button>
-      <div class="dropdown-content" id="cred_cont">
+      <div class="dropdown-content" id="deb_cont">
         <a href="debit_card_form.html">Apply</a>
         <a href="debit_card_form.html">View</a>
       </div>
     </div>
 
+    <button class="dropdown-btn"><i class="fas fa-caret-down"></i> FD/Loan
+    </button>
     <div class="dropdown-container">
-      <button class="dropbtn" id="cred">Cred</button>
-      <div class="dropdown-content" id="cred_cont">
-        <a href="credit_card_form.html">Apply</a>
-        <a href="credit_card_form.html">View</a>
+      <button class="dropbtn" id="fd">FD</button>
+      <div class="dropdown-content" id="fd_cont">
+        <a href="fd_form.html">Apply</a>
+        <a href="fd_form.html">View</a>
       </div>
     </div>
-    
-  <button class="dropdown-btn"><i class="fas fa-caret-down"></i> FD/Loan
-  </button>
-  <div class="dropdown-container">
-    <a href="fd_form.html"><b>Fixed Deposit</b></a>
-    <a href="loan_form.html"><b>Loan</b></a>
-  </div>
-</div>
-<style>
-  .dropbtn {
-    background-color: black;
-    width: 100%;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
 
-  * {
-    box-sizing: border-box;
-  }
-
-  .mySlides {
-    display: none;
-  }
-
-  .container {
-    float: right;
-  }
-
-  body {
-    background-color: #360e24;
-    box-sizing: border-box;
-  }
-
-  /* Slideshow container */
-  .slideshow-container {
-    position: absolute;
-    margin: auto;
-    float: right;
-
-  }
-
-  img {
-    height: 700px;
-    width: 70%;
-    float: right;
-    margin-right: 0;
-  }
-
-  /* Caption text */
-  .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-  }
-
-
-  .active {
-    background-color: #717171;
-  }
-
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-
-  @-webkit-keyframes fade {
-    from {
-      opacity: .4
-    }
-
-    to {
-      opacity: 1
-    }
-  }
-
-  @keyframes fade {
-    from {
-      opacity: .4
-    }
-
-    to {
-      opacity: 1
-    }
-  }
-
-
-  .mySlides fade
-</style>
-</head>
-
-<body>
-
-  <div class="slideshow-container">
-
-    <div class="mySlides fade">
-      <img src="/images/1.png">
-
-    </div>
-
-    <div class="mySlides fade">
-      <img src="/images/2.png">
-
-    </div>
-
-    <div class="mySlides fade">
-      <img src="/images/3.png">
-
+    <div class="dropdown-container">
+      <button class="dropbtn" id="loan">Loan</button>
+      <div class="dropdown-content" id="loan_cont">
+        <a href="loan_form.html">Apply</a>
+        <a href="loan_form.html">View</a>
+      </div>
     </div>
 
   </div>
-  <br>
+  <style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
 
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
 
-  <script>
-    var slideIndex = 0;
-    showSlides();
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
 
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    .dropdown-container:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-container .dropbtn:hover{
+      background-color: #3e8e41;
+    }
+
+    .dropdown-container .dropbtn:hover{
+      background-color: #3e8e41;
+    }
+/*
+    .dropdown-container .dropbtn:hover fd {
+      background-color: #3e8e41;
+    }
+
+    .dropdown-container .dropbtn:hover loan {
+      background-color: #3e8e41;
+    } */
+
+    .dropbtn {
+      background-color: black;
+      width: 100%;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .container {
+      float: right;
+    }
+
+    body {
+      background-color: #360e24;
+      box-sizing: border-box;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      position: absolute;
+      margin: auto;
+      float: right;
+
+    }
+
+    img {
+      height: 700px;
+      width: 70%;
+      float: right;
+      margin-right: 0;
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
       }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+
+      to {
+        opacity: 1
       }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 2000);
     }
 
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
 
-    for (i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-        } else {
-          dropdownContent.style.display = "block";
+      to {
+        opacity: 1
+      }
+    }
+
+    .mySlides fade
+  </style>
+  </head>
+
+  <body>
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="/images/1.png">
+
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/images/2.png">
+
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/images/3.png">
+
+      </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <script>
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
         }
-      });
-    }
-  </script>
-</body>
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000);
+      }
+
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
 
 </html>
