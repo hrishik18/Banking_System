@@ -1,21 +1,10 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Debit Card</title>
-    <link rel="stylesheet" href="./styles/form_d.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
-    <style>
-        .error {
-            color: #FF0001;
-            font-size: medium;
-            font-weight: bolder;
-            font-family: "Times New Roman", Times, serif;
-        }
-    </style>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/form_c.css">
+<title>Credit Card</title>
 
 <body>
     <?php
@@ -75,12 +64,12 @@
     }
     ?>
 
-    <div class="title">
-        Apply for your Debit Card now!
+    <div class="title"> Apply for your Credit Card now!
     </div>
     <div class="container">
         <br>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form method="POST" action="creditcard.html">
+
             <div class="row">
                 <label for="fname">First Name: </label>
                 <input type="text" id="fname" name="fname" placeholder="Enter..">
@@ -112,20 +101,16 @@
             </div>
             <span class="error"> <?php echo $maxlimitErr; ?> </span>
             <br>
+
             <div id="submit">
-                <input type="submit" name="submit" value="Submit">
+                <input type="submit" value="Submit">
             </div>
+            <br>
+            <br>
+            <br>
         </form>
-        <br>
     </div>
     </div>
-
-    <?php
-    if (isset($_POST['submit'])) {
-        //add in data base 
-    }
-    ?>
-
 </body>
 
 </html>

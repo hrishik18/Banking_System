@@ -1,4 +1,23 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>Credit Card</title>
+    <link rel="stylesheet" href="./styles/form_c.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
+    <style>
+        .error {
+            color: #FF0001;
+            font-size: medium;
+            font-weight: bolder;
+            font-family: "Times New Roman", Times, serif;
+        }
+    </style>
+</head>
+
+<body>
     <?php
     $contactErr = $fnameErr = $lnameErr = $custidErr = $maxlimitErr = "";
     $fname = $lname = $contact = $custid = $maxlimit = "";
@@ -56,4 +75,57 @@
     }
     ?>
 
+    <div class="title">
+        Apply for your Credit Card now!
+    </div>
+    <div class="container">
+        <br>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <div class="row">
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" placeholder="Enter..">
+            </div>
+            <span class="error"> <?php echo $fnameErr; ?> </span>
 
+            <div class="row">
+                <label for="lname">Last Name: </label>
+                <input type="text" id="lname" name="lname" placeholder="Enter..">
+            </div>
+            <span class="error"> <?php echo $lnameErr; ?> </span>
+
+            <br></br>
+            <div class="row">
+                <label for="Contact">Contact: </label>
+                <input type="text" id="Contact" name="contact" placeholder="Enter..">
+            </div>
+            <span class="error"> <?php echo $contactErr; ?> </span>
+
+            <div class="row">
+                <label for="Age">Customer id: </label>
+                <input type="text" id="Age" name="custid" placeholder="Enter..">
+            </div>
+            <span class="error"> <?php echo $custidErr; ?> </span>
+            <br></br>
+            <div class="row">
+                <label for="Age">Maximum Limit: </label>
+                <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
+            </div>
+            <span class="error"> <?php echo $maxlimitErr; ?> </span>
+            <br>
+            <div id="submit">
+                <input type="submit" name="submit" value="Submit">
+            </div>
+        </form>
+        <br>
+    </div>
+    </div>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        //add in data base 
+    }
+    ?>
+
+</body>
+
+</html>
