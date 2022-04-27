@@ -1,65 +1,84 @@
 <!DOCTYPE html>
 <html>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap"
-  rel="stylesheet">
-<link rel="stylesheet" href="/styles/form_c.css">
-<title>Credit Card</title>
+
+<head>
+  <title>Credit Card</title>
+  <link rel="stylesheet" href="../styles/form_c.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap"
+    rel="stylesheet">
+  <style>
+    .error {
+      color: #FF0001;
+      font-size: medium;
+      font-weight: bolder;
+      font-family: "Times New Roman", Times, serif;
+    }
+    
+  </style>
+</head>
 
 <body>
-  <?php include './';?>
+  <?php include './creditcard.php';?>
 
-  <div class="title">  Apply for your Credit Card now!
+  <div class="title">
+    Apply for your Credit Card now!
   </div>
   <div class="container">
     <br>
-    <form method="POST" action="creditcard.html">
-    <div class="row">
-      <label for="fname">First Name: </label>
-      <input type="text" id="fname" name="firstname" placeholder="Enter..">
-    </div>
-
-    <div class="row">
-      <label for="lname">Last Name: </label>
-      <input type="text" id="lname" name="lastname" placeholder="Enter..">
-    </div>
-
-    <br></br>
-    <div class="row">
-      <label for="Contact">Contact: </label>
-      <input type="text" id="Contact" name="Contact" placeholder="Enter..">
-    </div>
-
-    <div class="row">
-      <label for="Age">Customer id: </label>
-      <input type="text" id="Age" name="Age" placeholder="Enter..">
-    </div>
-    <br></br>
-    <div class="row">
-      <label for="Age">Aadhar number: </label>
-      <input type="text" id="Age" name="Age" placeholder="Enter..">
-    </div>
-    <br></br>
-    <div class="row">
-      <label for="Age">Maximum Limit: </label>
-      <input type="text" id="Age" name="Age" placeholder="Enter..">
-    </div>
-    <br></br>
-    <div class="row">
-      <label for="birthday">DOB:</label>
-      <input type="date" id="birthday" name="birthday">
-    </div>
+    <form method="post" action="././creditcard.php">
+      <div class="row">
+        <label for="fname">First Name: </label>
+        <input type="text" id="fname" name="fname" placeholder="Enter..">
+      </div>
+      <span class="error">
+        <?php echo $fnameErr; ?>
+      </span>
+  
+      <div class="row">
+        <label for="lname">Last Name: </label>
+        <input type="text" id="lname" name="lname" placeholder="Enter..">
+      </div>
+      <span class="error">
+        <?php echo $lnameErr; ?>
+      </span>
+  
+      <br></br>
+      <div class="row">
+        <label for="Contact">Contact: </label>
+        <input type="text" id="Contact" name="contact" placeholder="Enter..">
+      </div>
+      <span class="error">
+        <?php echo $contactErr; ?>
+      </span>
+  
+      <div class="row">
+        <label for="Age">Customer id: </label>
+        <input type="text" id="Age" name="custid" placeholder="Enter..">
+      </div>
+      <span class="error">
+        <?php echo $custidErr; ?>
+      </span>
+      <br></br>
+      <div class="row">
+        <label for="Age">Maximum Limit: </label>
+        <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
+      </div>
+      <span class="error">
+        <?php echo $maxlimitErr; ?>
+      </span>
+      <br>
+      <div id="submit">
+        <input type="submit" name="submit" value="Submit">
+      </div>
+    </form>
     <br>
-    <div id="submit">
-      <input type="submit" value="Submit">
-    </div>
-    <br>
-    <br>
-    <br>
-  </form>
   </div>
   </div>
-</body>
-
-</html>
+  
+  
+  
+  </body>
+  
+  </html>

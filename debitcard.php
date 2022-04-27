@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles/form_d.css">
+<link rel="stylesheet" href="./styles/form_c.css">
 <title>Debit Card</title>
 
 <body>
@@ -66,51 +66,65 @@
     }
     ?>
 
+
+
     <div class="title">
         Apply for your Debit Card now!
     </div>
     <div class="container">
         <br>
-        <div class="row">
-            <label for="fname"><b>First Name: </b></label>
-            <input type="text" id="fname" name="firstname" placeholder="Enter..">
-        </div>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <div class="row">
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" placeholder="Enter..">
+            </div>
+            <span class="error">
+                <?php echo $fnameErr; ?>
+            </span>
 
-        <div class="row">
-            <label for="lname"><b>Last Name: </b></label>
-            <input type="text" id="lname" name="lastname" placeholder="Enter..">
-        </div>
+            <div class="row">
+                <label for="lname">Last Name: </label>
+                <input type="text" id="lname" name="lname" placeholder="Enter..">
+            </div>
+            <span class="error">
+                <?php echo $lnameErr; ?>
+            </span>
 
-        <br></br>
-        <div class="row">
-            <label for="Contact"><b>Contact: </b></label>
-            <input type="text" id="Contact" name="Contact" placeholder="Enter..">
-        </div>
+            <br></br>
+            <div class="row">
+                <label for="Contact">Contact: </label>
+                <input type="text" id="Contact" name="contact" placeholder="Enter..">
+            </div>
+            <span class="error">
+                <?php echo $contactErr; ?>
+            </span>
 
-        <div class="row">
-            <label for="Age"><b>Customer id: </b></label>
-            <input type="text" id="Age" name="Age" placeholder="Enter..">
-        </div>
-        <br></br>
-        <br></br>
-        <div class="row">
-            <label for="Age"><b>Maximum Limit: </b></label>
-            <input type="text" id="Age" name="Age" placeholder="Enter..">
-        </div>
-        <br></br>
-        <div class="row">
-            <label for="birthday"><b>DOB: </b></label>
-            <input type="date" id="birthday" name="birthday">
-        </div>
-        <br>
-        <div id="submit">
-            <input type="submit" value="Submit">
-        </div>
-        <br>
-        <br>
+            <div class="row">
+                <label for="Age">Customer id: </label>
+                <input type="text" id="Age" name="custid" placeholder="Enter..">
+            </div>
+            <span class="error">
+                <?php echo $custidErr; ?>
+            </span>
+            <br></br>
+            <div class="row">
+                <label for="Age">Maximum Limit: </label>
+                <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
+            </div>
+            <span class="error">
+                <?php echo $maxlimitErr; ?>
+            </span>
+            <br>
+            <div id="submit">
+                <input type="submit" name="submit" value="Submit">
+            </div>
+        </form>
         <br>
     </div>
     </div>
+
+
+
 </body>
 
 </html>
