@@ -62,6 +62,7 @@ input[type=submit] {
     position: absolute; 
     bottom: 20px;
     margin-left: 45%;
+    margin-top: 20%;
 }
 
 .title
