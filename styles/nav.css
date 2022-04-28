@@ -58,7 +58,7 @@
     background-color: rgb(0, 0, 0);
   }
   
-  .dropdown-container {
+ .row .dropdown-container {
     display: none;
     background-color: #111;
     color: #f1f1f1;

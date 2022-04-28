@@ -28,18 +28,19 @@
 </div>
 <br></br>
 <div class="row">
-    <label for="acc"><b>Account ID: </b></label>
-    <input type="text" id="Acc" name="Acc" placeholder="Enter..">
-</div>
-<br></br>
-<div class="row">
     <label for="prin"><b>Principle Amount: </label>
     <input type="text" id="prin" name="prin" placeholder="Enter..">
 </div>
 <br></br>
 <div class="row">
 <label for="rate"><b>Rate and Maturity Period: </b></label>
-<input type="text" id="rate" name="rate" placeholder="Enter..">
+<select name="rate" id="rate">
+  <option>Select Option</option>
+  <option value="6m">0.75% pa for 6 months</option>
+  <option value="1y">1.85% pa for 1 year</option>
+  <option value="2y">2.70% pa for 2 years</option>
+  <option value="3y">3.95% pa for 3 years</option>
+</select>
 </div>
 <br></br>
     <div id="submit">

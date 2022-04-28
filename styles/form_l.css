@@ -21,7 +21,7 @@ body {
    
 }
 input[type=text], select, textarea{
-    padding: 7px;
+    padding: 9px;
   border: 1px solid #ccc; 
   border-radius: 4px; 
   box-sizing: border-box; 
@@ -60,7 +60,7 @@ input[type=submit] {
 
 .title
 {
-    color: rgb(21, 21, 38);
+    color: rgb(150, 150, 199);
     text-align: center;
      text-shadow: 2px 2px 4px #31000b;
      font-family: 'Questrial', sans-serif;
@@ -78,3 +78,10 @@ input[type=submit] {
     width: 400px;
     margin-left: 250px;
 }   
+
+select{
+  padding: 7px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+}
