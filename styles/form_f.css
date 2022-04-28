@@ -1,44 +1,46 @@
 body {
-    background-image: url("/images/FD_form.png");
-    background-repeat: no-repeat;
-    background-size: 1540px 754px; 
-   }
-
-.container
-{
-    text-align:center;
-    background-color:rgb(71, 71, 91);
-    opacity:80%;
-    width:800px;
-    height: 650px;
-    margin: auto;
-    margin-top: 30px;
-    padding-top:3px;
-    font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    position: relative;
-   
-}
-input[type=text], select, textarea{
-    padding: 7px;
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
-}
-input[type=date], select, textarea{
-    padding: 7px;
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
+  background-image: url(../images/FD_form.png);
+  background-repeat: no-repeat;
+  background-size: 1540px 754px;
 }
 
-label{
-    font-family: 'Questrial', sans-serif;
+.container {
+  text-align: center;
+  background-color: rgb(71, 71, 91);
+  opacity: 80%;
+  width: 800px;
+  height: 650px;
+  margin: auto;
+  margin-top: 30px;
+  padding-top: 3px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+input[type="text"],
+select,
+textarea {
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="date"],
+select,
+textarea {
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-input[type=submit] {
-  background-color: rgb(1, 1, 1) ;
+label {
+  font-family: "Questrial", sans-serif;
+}
+
+input[type="submit"] {
+  background-color: rgb(1, 1, 1);
   color: white;
   padding: 10px 10px;
   border: none;
@@ -47,34 +49,33 @@ input[type=submit] {
 }
 
 .row label {
-    display: inline-block;
-    width: 150px;
-    text-align: right;
-  }
-
-#submit{
-    position: absolute; 
-    bottom: 20px;
-    margin-left: 45%;
+  display: inline-block;
+  width: 150px;
+  text-align: right;
 }
 
-.title
-{
-    color: rgb(21, 21, 38);
-    text-align: center;
-     text-shadow: 2px 2px 4px #e4adb9;
-     font-family: 'Questrial', sans-serif;
-     font-size: 25px;
-     text-transform: uppercase;
-     letter-spacing: 5px;
-     word-spacing: 8px;
+#submit {
+  position: absolute;
+  bottom: 20px;
+  margin-left: 45%;
+}
+
+.title {
+  color: rgb(21, 21, 38);
+  text-align: center;
+  text-shadow: 2px 2px 4px #e4adb9;
+  font-family: "Questrial", sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  word-spacing: 8px;
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    padding-top: 10px;
-    width: 400px;
-    margin-left: 250px;
-}   
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 10px;
+  width: 400px;
+  margin-left: 250px;
+}
