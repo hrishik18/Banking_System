@@ -89,3 +89,17 @@ input[type=submit] {
     width: 400px;
     margin-left: 250px;
 }
+.error {
+            color: black;
+            font-size: medium;
+            font-weight: bolder;
+            font-family: "Times New Roman", Times, serif;
+            animation: fadeOut 2s;
+            animation-delay: 3s;
+            -webkit-animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

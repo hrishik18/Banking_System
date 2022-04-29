@@ -7,14 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
-    <style>
-        .error {
-            color: #FF0001;
-            font-size: medium;
-            font-weight: bolder;
-            font-family: "Times New Roman", Times, serif;
-        }
-    </style>
 </head>
 
 <body>

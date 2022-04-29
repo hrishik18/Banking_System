@@ -1,5 +1,5 @@
 body {
-    background-image: url("/images/loan.png");
+    background-image: url(../images/loan.png);
     background-repeat: no-repeat;
     background-size: 1540px 754px; 
    }
@@ -84,4 +84,18 @@ select{
   border: 1px solid #ccc; 
   border-radius: 4px; 
   box-sizing: border-box; 
+}
+.error {
+            color: black;
+            font-size: medium;
+            font-weight: bolder;
+            font-family: "Times New Roman", Times, serif;
+            animation: fadeOut 2s;
+            animation-delay: 3s;
+            -webkit-animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }

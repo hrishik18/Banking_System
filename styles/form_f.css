@@ -1,30 +1,9 @@
 body {
-  background-image: url(../images/FD_form.png);
-  background-repeat: no-repeat;
-  background-size: 1540px 754px;
-}
+    background-image: url(../images/FD_form.png);
+    background-repeat: no-repeat;
+    background-size: 1540px 754px; 
+   }
 
-.container {
-  text-align: center;
-  background-color: rgb(71, 71, 91);
-  opacity: 80%;
-  width: 800px;
-  height: 650px;
-  margin: auto;
-  margin-top: 30px;
-  padding-top: 3px;
-  font-size: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  position: relative;
-}
-input[type="text"],
-select,
-textarea {
-  padding: 7px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 .container
 {
     text-align:center;
@@ -46,23 +25,20 @@ input[type=text], select, textarea{
   border: 1px solid #ccc; 
   border-radius: 4px; 
   box-sizing: border-box; 
-
 }
-input[type="date"],
-select,
-textarea {
-  padding: 7px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+input[type=date], select, textarea{
+    padding: 7px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
 }
 
-label {
-  font-family: "Questrial", sans-serif;
+label{
+    font-family: 'Questrial', sans-serif;
 }
 
-input[type="submit"] {
-  background-color: rgb(1, 1, 1);
+input[type=submit] {
+  background-color: rgb(1, 1, 1) ;
   color: white;
   padding: 10px 10px;
   border: none;
@@ -71,38 +47,30 @@ input[type="submit"] {
 }
 
 .row label {
-  display: inline-block;
-  width: 150px;
-  text-align: right;
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+  }
+
+#submit{
+    position: absolute; 
+    bottom: 20px;
+    margin-left: 45%;
 }
 
-#submit {
-  position: absolute;
-  bottom: 20px;
-  margin-left: 45%;
-}
-
-.title {
-  color: rgb(21, 21, 38);
-  text-align: center;
-  text-shadow: 2px 2px 4px #e4adb9;
-  font-family: "Questrial", sans-serif;
-  font-size: 25px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  word-spacing: 8px;
+.title
+{
+    color: rgb(21, 21, 38);
+    text-align: center;
+     text-shadow: 2px 2px 4px #e4adb9;
+     font-family: 'Questrial', sans-serif;
+     font-size: 25px;
+     text-transform: uppercase;
+     letter-spacing: 5px;
+     word-spacing: 8px;
 }
 
 .row {
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-top: 10px;
-  width: 400px;
-  margin-left: 250px;
-}
-
     display: flex;
     flex-direction: row;
     justify-content:space-around;
@@ -117,4 +85,17 @@ select #rate{
   border-radius: 4px; 
   box-sizing: border-box; 
 }
+.error {
+            color: black;
+            font-size: medium;
+            font-weight: bolder;
+            font-family: "Times New Roman", Times, serif;
+            animation: fadeOut 2s;
+            animation-delay: 3s;
+            -webkit-animation-fill-mode: forwards;
+        }
 
+        @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

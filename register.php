@@ -2,18 +2,18 @@
 <html>
 
 <head>
-    <title>Debit Card</title>
-    <link rel="stylesheet" href="./styles/form_d.css">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/form_c.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
-    
 </head>
 
 <body>
+
     <?php
-    $contactErr = $fnameErr = $lnameErr = $custidErr = $maxlimitErr = "";
-    $fname = $lname = $contact = $custid = $maxlimit = "";
+    $contactErr = $fnameErr = $lnameErr = $addhErr = $panErr = $dobErr = $cityErr = $emailErr = "";
+    $fname = $lname = $contact = $addh = $pan = $city = $email =  $dob = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
@@ -45,17 +45,17 @@
                 $contactErr = "Mobile no must contain 10 digits.";
             }
         }
-        if (empty($_POST["maxlimit"])) {
-            $maxlimitErr = "Max limit is required";
+        if (empty($_POST["email"])) {
+            $emailErr = "Email is required";
         } else {
-            $maxlimit = input_data($_POST["maxlimit"]);
-            // check if mobile no is well-formed  
-            if (!preg_match("/^[0-9]*$/", $maxlimit)) {
-                $maxlimitErr = "Only numeric value is allowed.";
+            $email = input_data($_POST["email"]);
+            // check if e-mail address is well-formed
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid email format";
             }
-            if ($maxlimit < 0) {
-                $maxlimitErr = "Cant be negative";
-            }
+        }
+        if (empty($_POST["dob"])) {
+            $dobErr = "DOB is required";
         }
         //custid is auto filled 
     }
@@ -68,43 +68,59 @@
     }
     ?>
 
+
     <div class="title">
-        Apply for your Debit Card now!
+        Registeration form
     </div>
     <div class="container">
         <br>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form method="post" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="row">
                 <label for="fname">First Name: </label>
                 <input type="text" id="fname" name="fname" placeholder="Enter..">
             </div>
-            <span class="error"> <?php echo $fnameErr; ?> </span>
+            <span class="error">
+                <?php echo $fnameErr; ?>
+            </span>
 
             <div class="row">
                 <label for="lname">Last Name: </label>
                 <input type="text" id="lname" name="lname" placeholder="Enter..">
             </div>
-            <span class="error"> <?php echo $lnameErr; ?> </span>
-
+            <span class="error">
+                <?php echo $lnameErr; ?>
+            </span>
+            <div class="row">
+                <label for="birthday"><b>Date of birth: </b></label>
+                <input type="date" id="birthday" name="dob">
+            </div>
+            <span class="error">
+                <?php echo $dobErr; ?>
+            </span>
             <br></br>
             <div class="row">
                 <label for="Contact">Contact: </label>
                 <input type="text" id="Contact" name="contact" placeholder="Enter..">
             </div>
-            <span class="error"> <?php echo $contactErr; ?> </span>
-
+            <span class="error">
+                <?php echo $contactErr; ?>
+            </span>
             <div class="row">
-                <label for="Age">Customer id: </label>
-                <input type="text" id="Age" name="custid" placeholder="Enter..">
+                <label for="Age">Aadhar card no. </label>
+                <input type="text" id="Age" name="addh" placeholder="Enter..">
             </div>
-            <span class="error"> <?php echo $custidErr; ?> </span>
+            <span class="error">
+                <?php echo $addhErr; ?>
+            </span>
             <br></br>
             <div class="row">
-                <label for="Age">Maximum Limit: </label>
-                <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
+                <label for="Age">city: </label>
+                <input type="text" id="Age" name="city" placeholder="Enter..">
             </div>
-            <span class="error"> <?php echo $maxlimitErr; ?> </span>
-            <br>
+            <span class="error">
+                <?php echo $cityErr; ?>
+            </span>
+            </br>
             <div id="submit">
                 <input type="submit" name="submit" value="Submit">
             </div>

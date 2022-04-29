@@ -68,7 +68,7 @@
     </div>
     <div class="container">
         <br>
-        <form method="POST" action="creditcard.html">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
             <div class="row">
                 <label for="fname">First Name: </label>
@@ -88,27 +88,30 @@
                 <input type="text" id="Contact" name="contact" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $contactErr; ?> </span>
-
-            <div class="row">
-                <label for="Age">Customer id: </label>
-                <input type="text" id="Age" name="custid" placeholder="Enter..">
-            </div>
-            <span class="error"> <?php echo $custidErr; ?> </span>
             <br></br>
+            <div class="row">
+                <label for="rate"><b>Rate and Maturity Period: </b></label>
+                <select name="rate" id="rate">
+                    <option>Select Option</option>
+                    <option value="6m">0.75% pa for 6 months</option>
+                    <option value="1y">1.85% pa for 1 year</option>
+                    <option value="2y">2.70% pa for 2 years</option>
+                    <option value="3y">3.95% pa for 3 years</option>
+                </select>
+            </div>
             <div class="row">
                 <label for="Age">Principal amount: </label>
                 <input type="text" id="Age" name="pamt" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $pamtErr; ?> </span>
-            <br>
-
+            <br></br>
             <div id="submit">
                 <input type="submit" value="Submit">
             </div>
-            <br>
-            <br>
-            <br>
         </form>
+        <br>
+        <br>
+        <br>
     </div>
     </div>
 </body>
