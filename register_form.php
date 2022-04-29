@@ -3,17 +3,25 @@
 
 <head>
     <title>Register</title>
-    <link rel="stylesheet" href="styles/form_c.css">
+    <link rel="stylesheet" href="styles/reg.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
     <style>
         .error {
-            color: #FF0001;
+            color: black;
             font-size: medium;
             font-weight: bolder;
             font-family: "Times New Roman", Times, serif;
+            animation: fadeOut 2s;
+            animation-delay: 3s;
+            -webkit-animation-fill-mode: forwards;
         }
+
+        @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
     </style>
 </head>
 
@@ -99,7 +107,7 @@
                 <?php echo $lnameErr; ?>
             </span>
             <div class="row">
-                <label for="birthday"><b>Date of birth: </b></label>
+                <label for="birthday">Date of birth: </label>
                 <input type="date" id="birthday" name="dob">
             </div>
             <span class="error">

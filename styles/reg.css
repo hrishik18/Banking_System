@@ -1,5 +1,5 @@
 body {
-    background-image: url("/images/loan.png");
+    background-image: url("../images/reg.png");
     background-repeat: no-repeat;
     background-size: 1540px 754px; 
    }
@@ -7,10 +7,10 @@ body {
 .container
 {
     text-align:center;
-    background-color:rgb(164, 163, 162);
+    background-color:#d3ccf7;
     opacity:80%;
     width:800px;
-    height: 650px;
+    height:570px;
     margin: auto;
     margin-top: 30px;
     padding-top:3px;
@@ -38,7 +38,7 @@ label{
 }
 
 input[type=submit] {
-  background-color: rgb(1, 1, 1) ;
+  background-color: rgb(25, 11, 36) ;
   color: white;
   padding: 10px 10px;
   border: none;
@@ -46,25 +46,33 @@ input[type=submit] {
   cursor: pointer;
 }
 
-.row label {
-    display: inline-block;
-    width: 150px;
-    text-align: right;
-  }
+.left
+{
+    padding-top: 10px;
+    float:left;
+    text-align: justify;}
+.right
+{
+    padding-top: 10px;
+    float:right;
+    text-align: justify
+}
 
 #submit{
     position: absolute; 
     bottom: 20px;
     margin-left: 45%;
+    margin-top: 20%;
 }
 
 .title
 {
-    color: rgb(150, 150, 199);
+    margin-left: 200px;
+    color:#0e0507;
     text-align: center;
-     text-shadow: 2px 2px 4px #31000b;
+     text-shadow: 2px 2px 4px #e4adb9;
      font-family: 'Questrial', sans-serif;
-     font-size: 25px;
+     font-size: 20px;
      text-transform: uppercase;
      letter-spacing: 5px;
      word-spacing: 8px;
@@ -77,11 +85,10 @@ input[type=submit] {
     padding-top: 10px;
     width: 400px;
     margin-left: 250px;
-}   
-
-select{
-  padding: 7px;
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
 }
+
+.row label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+  }
