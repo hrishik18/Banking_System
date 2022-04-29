@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Debit Card</title>
-    <link rel="stylesheet" href="./styles/form_d.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
-    <style>
-        .error {
-            color: #FF0001;
-            font-size: medium;
-            font-weight: bolder;
-            font-family: "Times New Roman", Times, serif;
-        }
-    </style>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles/form_f.css">
+<title>Fixed Deposit</title>
 
 <body>
     <?php
-    $contactErr = $fnameErr = $lnameErr = $custidErr = $maxlimitErr = "";
-    $fname = $lname = $contact = $custid = $maxlimit = "";
+    $contactErr = $fnameErr = $lnameErr = $custidErr = $pamtErr = "";
+    $fname = $lname = $contact = $custid = $pamt = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
@@ -52,16 +41,16 @@
                 $contactErr = "Mobile no must contain 10 digits.";
             }
         }
-        if (empty($_POST["maxlimit"])) {
-            $maxlimitErr = "Max limit is required";
+        if (empty($_POST["pamt"])) {
+            $pamtErr = "Max limit is required";
         } else {
-            $maxlimit = input_data($_POST["maxlimit"]);
+            $pamt = input_data($_POST["pamt"]);
             // check if mobile no is well-formed  
-            if (!preg_match("/^[0-9]*$/", $maxlimit)) {
-                $maxlimitErr = "Only numeric value is allowed.";
+            if (!preg_match("/^[0-9]*$/", $pamt)) {
+                $pamtErr = "Only numeric value is allowed.";
             }
-            if ($maxlimit < 0) {
-                $maxlimitErr = "Cant be negative";
+            if ($pamt < 0) {
+                $pamtErr = "Cant be negative";
             }
         }
         //custid is auto filled 
@@ -75,12 +64,12 @@
     }
     ?>
 
-    <div class="title">
-        Apply for your Debit Card now!
+    <div class="title"> Apply for your Fixed Deposit !
     </div>
     <div class="container">
         <br>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form method="POST" action="creditcard.html">
+
             <div class="row">
                 <label for="fname">First Name: </label>
                 <input type="text" id="fname" name="fname" placeholder="Enter..">
@@ -107,25 +96,21 @@
             <span class="error"> <?php echo $custidErr; ?> </span>
             <br></br>
             <div class="row">
-                <label for="Age">Maximum Limit: </label>
-                <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
+                <label for="Age">Principal amount: </label>
+                <input type="text" id="Age" name="pamt" placeholder="Enter..">
             </div>
-            <span class="error"> <?php echo $maxlimitErr; ?> </span>
+            <span class="error"> <?php echo $pamtErr; ?> </span>
             <br>
+
             <div id="submit">
-                <input type="submit" name="submit" value="Submit">
+                <input type="submit" value="Submit">
             </div>
+            <br>
+            <br>
+            <br>
         </form>
-        <br>
     </div>
     </div>
-
-    <?php
-    if (isset($_POST['submit'])) {
-        //add in data base 
-    }
-    ?>
-
 </body>
 
 </html>
