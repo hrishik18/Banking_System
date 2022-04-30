@@ -1,5 +1,5 @@
 body {
-    background-image: url(../images/Cred_form.png); 
+    background-image: url("../images/reg.png");
     background-repeat: no-repeat;
     background-size: 1540px 754px; 
    }
@@ -7,7 +7,7 @@ body {
 .container
 {
     text-align:center;
-    background-color:#994c6f;
+    background-color:#d3ccf7;
     opacity:80%;
     width:800px;
     height:570px;
@@ -21,7 +21,7 @@ body {
    
 }
 input[type=text], select, textarea{
-    padding: 7px;
+    padding: 9px;
   border: 1px solid #ccc; 
   border-radius: 4px; 
   box-sizing: border-box; 
@@ -38,7 +38,7 @@ label{
 }
 
 input[type=submit] {
-  background-color: rgb(59, 13, 31) ;
+  background-color: rgb(25, 11, 36) ;
   color: white;
   padding: 10px 10px;
   border: none;
@@ -67,7 +67,8 @@ input[type=submit] {
 
 .title
 {
-    color:#da7f92;
+    margin-left: 200px;
+    color:#0e0507;
     text-align: center;
      text-shadow: 2px 2px 4px #e4adb9;
      font-family: 'Questrial', sans-serif;

@@ -8,6 +8,9 @@
     <title>Loan</title>
 </head>
 <body>
+
+  
+
     <div class="title">
         Apply for your Fixed Deposit !
       </div>
@@ -31,22 +34,30 @@
     
     <div class="row">
         <label for="FD"><b>Loan Type: </b></label>
-        <input type="text" id="FD" name="FD" placeholder="Enter..">
+        <select name="type" id="type">
+            <option>Select Option</option>
+            <option value="home">Home</option>
+            <option value="car">Car</option>
+            <option value="education">Education</option>
+            <option value="personal">Personal</option>
+            <option value="gold">Gold</option>
+          </select>
     </div>
     <br></br>
     <div class="row">
-        <label for="acc"><b>Customer ID: </b></label>
-        <input type="text" id="Acc" name="Acc" placeholder="Enter..">
-    </div>
-    <br></br>
-    <div class="row">
-        <label for="prin"><b>Principle Amount: </label>
+        <label for="prin"><b>Loan Amount: </label>
         <input type="text" id="prin" name="prin" placeholder="Enter..">
     </div>
     <br></br>
     <div class="row">
     <label for="rate"><b>Rate and EMI: </b></label>
-    <input type="text" id="rate" name="rate" placeholder="Enter..">
+    <select name="rate" id="rate">
+        <option>Select Option</option>
+        <option value="6m">0.75% pa with 1000rs</option>
+        <option value="1y">1.85% pa with 850rs</option>
+        <option value="2y">2.70% pa with 600rs</option>
+        <option value="3y">3.95% pa for 350rs</option>
+      </select>
     </div>
     <br></br>
         <div id="submit">

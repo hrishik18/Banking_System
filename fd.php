@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Debit Card</title>
-    <link rel="stylesheet" href="./styles/form_d.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
-    
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles/form_f.css">
+<title>Fixed Deposit</title>
 
 <body>
     <?php
-    $contactErr = $fnameErr = $lnameErr  = $maxlimitErr = "";
-    $fname = $lname = $contact  = $maxlimit = "";
+    $contactErr = $fnameErr = $lnameErr = $custidErr = $pamtErr = $rateErr = "";
+    $fname = $lname = $contact = $custid = $pamt = $time = $rate = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
@@ -45,19 +41,32 @@
                 $contactErr = "Mobile no must contain 10 digits.";
             }
         }
-        if (empty($_POST["maxlimit"])) {
-            $maxlimitErr = "Max limit is required";
+        if (empty($_POST["pamt"])) {
+            $pamtErr = "Max limit is required";
         } else {
-            $maxlimit = input_data($_POST["maxlimit"]);
+            $pamt = input_data($_POST["pamt"]);
             // check if mobile no is well-formed  
-            if (!preg_match("/^[0-9]*$/", $maxlimit)) {
-                $maxlimitErr = "Only numeric value is allowed.";
+            if (!preg_match("/^[0-9]*$/", $pamt)) {
+                $pamtErr = "Only numeric value is allowed.";
             }
-            if ($maxlimit < 0) {
-                $maxlimitErr = "Cant be negative";
+            if ($pamt < 0) {
+                $pamtErr = "Cant be negative";
             }
         }
-        //custid is auto filled 
+        //form input
+        if (!isset($_POST['rate'])) {
+            $rateErr = "You forgot to select your Rate & Maturity period!";
+        } else {
+            $time = input_data($_POST["rate"]);
+            if ($time == "6m")
+                $rate = 0.75;
+            elseif ($time == "1y")
+                $rate = 1.85;
+            elseif ($time == "2y")
+                $rate = 2.7;
+            else
+                $rate = 3.95;
+        }
     }
     function input_data($data)
     {
@@ -68,12 +77,12 @@
     }
     ?>
 
-    <div class="title">
-        Apply for your Debit Card now!
+    <div class="title"> Apply for your Fixed Deposit !
     </div>
     <div class="container">
         <br>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+
             <div class="row">
                 <label for="fname">First Name: </label>
                 <input type="text" id="fname" name="fname" placeholder="Enter..">
@@ -85,34 +94,40 @@
                 <input type="text" id="lname" name="lname" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $lnameErr; ?> </span>
-
             <br></br>
             <div class="row">
                 <label for="Contact">Contact: </label>
                 <input type="text" id="Contact" name="contact" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $contactErr; ?> </span>
-
+            <br></br>
             <div class="row">
-                <label for="Age">Maximum Limit: </label>
-                <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
+                <label for="rate"><b>Rate and Maturity Period: </b></label>
+                <select name="rate" id="rate">
+                    <option>Select Option</option>
+                    <option value="6m">0.75% pa for 6 months</option>
+                    <option value="1y">1.85% pa for 1 year</option>
+                    <option value="2y">2.70% pa for 2 years</option>
+                    <option value="3y">3.95% pa for 3 years</option>
+                </select>
             </div>
-            <span class="error"> <?php echo $maxlimitErr; ?> </span>
-            <br>
+            <span class="error"> <?php echo $rateErr; ?> </span>
+            <div class="row">
+                <label for="Age">Principal amount: </label>
+                <input type="text" id="Age" name="pamt" placeholder="Enter..">
+            </div>
+            <span class="error"> <?php echo $pamtErr; ?> </span>
+            <br></br>
+            <br></br>
+            </br>
+            </br>
             <div id="submit">
-                <input type="submit" name="submit" value="submit">
+                <input type="submit" value="submit">
             </div>
         </form>
-        <br>
+
     </div>
     </div>
-
-    <?php
-    if (isset($_POST['submit'])) {
-        //add in data base 
-    }
-    ?>
-
 </body>
 
 </html>
