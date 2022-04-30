@@ -8,23 +8,23 @@
 
 <body>
     <?php
-    $contactErr = $fnameErr = $lnameErr = $custidErr = $pamtErr = "";
-    $fname = $lname = $contact = $custid = $pamt = "";
+    $contactErr = $fnameErr = $lnameErr = $custidErr = $pamtErr = $rateErr = "";
+    $fname = $lname = $contact = $custid = $pamt = $time = $rate = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
         } else {
-            $name = input_data($_POST["fname"]);
+            $fname = input_data($_POST["fname"]);
 
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            if (!preg_match("/^[a-zA-Z ]*$/", $fname)) {
                 $fnameErr = "Only alphabets and white space are allowed";
             }
         }
         if (empty($_POST["lname"])) {
             $lnameErr = "last Name is required";
         } else {
-            $name = input_data($_POST["lname"]);
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $lname = input_data($_POST["lname"]);
+            if (!preg_match("/^[a-zA-Z ]*$/", $lname)) {
                 $lnameErr = "Only alphabets and white space are allowed";
             }
         }
@@ -53,7 +53,20 @@
                 $pamtErr = "Cant be negative";
             }
         }
-        //custid is auto filled 
+        //form input
+        if (!isset($_POST['rate'])) {
+            $rateErr = "You forgot to select your Rate & Maturity period!";
+        } else {
+            $time = input_data($_POST["rate"]);
+            if ($time == "6m")
+                $rate = 0.75;
+            elseif ($time == "1y")
+                $rate = 1.85;
+            elseif ($time == "2y")
+                $rate = 2.7;
+            else
+                $rate = 3.95;
+        }
     }
     function input_data($data)
     {
@@ -81,7 +94,6 @@
                 <input type="text" id="lname" name="lname" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $lnameErr; ?> </span>
-
             <br></br>
             <div class="row">
                 <label for="Contact">Contact: </label>
@@ -99,19 +111,21 @@
                     <option value="3y">3.95% pa for 3 years</option>
                 </select>
             </div>
+            <span class="error"> <?php echo $rateErr; ?> </span>
             <div class="row">
                 <label for="Age">Principal amount: </label>
                 <input type="text" id="Age" name="pamt" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $pamtErr; ?> </span>
             <br></br>
+            <br></br>
+            </br>
+            </br>
             <div id="submit">
-                <input type="submit" value="Submit">
+                <input type="submit" value="submit">
             </div>
         </form>
-        <br>
-        <br>
-        <br>
+
     </div>
     </div>
 </body>

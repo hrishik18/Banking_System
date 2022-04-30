@@ -12,23 +12,23 @@
 
 <body>
     <?php
-    $contactErr = $fnameErr = $lnameErr = $custidErr = $maxlimitErr = "";
-    $fname = $lname = $contact = $custid = $maxlimit = "";
+    $contactErr = $fnameErr = $lnameErr  = $maxlimitErr = "";
+    $fname = $lname = $contact  = $maxlimit = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
         } else {
-            $name = input_data($_POST["fname"]);
+            $fname = input_data($_POST["fname"]);
 
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            if (!preg_match("/^[a-zA-Z ]*$/", $fname)) {
                 $fnameErr = "Only alphabets and white space are allowed";
             }
         }
         if (empty($_POST["lname"])) {
             $lnameErr = "last Name is required";
         } else {
-            $name = input_data($_POST["lname"]);
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $lname = input_data($_POST["lname"]);
+            if (!preg_match("/^[a-zA-Z ]*$/", $lname)) {
                 $lnameErr = "Only alphabets and white space are allowed";
             }
         }
@@ -94,19 +94,13 @@
             <span class="error"> <?php echo $contactErr; ?> </span>
 
             <div class="row">
-                <label for="Age">Customer id: </label>
-                <input type="text" id="Age" name="custid" placeholder="Enter..">
-            </div>
-            <span class="error"> <?php echo $custidErr; ?> </span>
-            <br></br>
-            <div class="row">
                 <label for="Age">Maximum Limit: </label>
                 <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $maxlimitErr; ?> </span>
             <br>
             <div id="submit">
-                <input type="submit" name="submit" value="Submit">
+                <input type="submit" name="submit" value="submit">
             </div>
         </form>
         <br>

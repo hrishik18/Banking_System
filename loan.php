@@ -13,8 +13,9 @@
 
 
     <?php
-    $contactErr = $fnameErr = $lnameErr = $custidErr = $amtErr = "";
-    $fname = $lname = $contact = $custid = $amt = "";
+    include 'includes/dbconnect.php';
+    $contactErr = $fnameErr = $lnameErr = $typeErr = $amtErr = $rateErr = "";
+    $fname = $lname = $contact = $type = $amt = $emi = $rate = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
@@ -58,7 +59,21 @@
                 $amtErr = "Cant be negative";
             }
         }
-        //custid is auto filled 
+        //form input
+        if (!isset($_POST['rate'])) {
+            $rateErr = "You forgot to select your Rate & Maturity period!";
+        } else {
+            $time = input_data($_POST["rate"]);
+            if ($time == "6m") {
+                input_data($_POST["amt"]);
+                $rate = 0.75;
+            } elseif ($time == "1y")
+                $rate = 1.85;
+            elseif ($time == "2y")
+                $rate = 2.7;
+            else
+                $rate = 3.95;
+        }
     }
     function input_data($data)
     {
@@ -93,7 +108,7 @@
                 <input type="text" id="Contact" name="contact" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $contactErr; ?> </span>
-
+            <br></br>
             <div class="row">
                 <label for="FD"><b>Loan Type: </b></label>
                 <select name="type" id="type">
@@ -105,6 +120,7 @@
                     <option value="gold">Gold</option>
                 </select>
             </div>
+            <span class="error"> <?php echo $typeErr; ?> </span>
             <br></br>
             <div class="row">
                 <label for="Age">Loan Amount: </label>
@@ -112,7 +128,6 @@
             </div>
             <span class="error"> <?php echo $amtErr; ?> </span>
             <br>
-            <br></br>
             <div class="row">
                 <label for="rate"><b>Rate and EMI: </b></label>
                 <select name="rate" id="rate">
@@ -123,9 +138,10 @@
                     <option value="3y">3.95% pa for 350rs</option>
                 </select>
             </div>
+            <span class="error"> <?php echo $rateErr; ?> </span>
             <br></br>
             <div id="submit">
-                <input type="submit" value="Submit">
+                <input type="submit" value="submit">
             </div>
         </form>
         <br>

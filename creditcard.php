@@ -11,8 +11,9 @@
 
 <body>
     <?php
-    $contactErr = $fnameErr = $lnameErr = $custidErr = $maxlimitErr = "";
-    $fname = $lname = $contact = $custid = $maxlimit = "";
+    include 'includes/dbconnect.php';
+    $contactErr = $fnameErr = $lnameErr = $maxlimitErr = "";
+    $fname = $lname = $contact  = $maxlimit = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
@@ -93,19 +94,13 @@
             <span class="error"> <?php echo $contactErr; ?> </span>
 
             <div class="row">
-                <label for="Age">Customer id: </label>
-                <input type="text" id="Age" name="custid" placeholder="Enter..">
-            </div>
-            <span class="error"> <?php echo $custidErr; ?> </span>
-            <br></br>
-            <div class="row">
                 <label for="Age">Maximum Limit: </label>
                 <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $maxlimitErr; ?> </span>
             <br>
             <div id="submit">
-                <input type="submit" name="submit" value="Submit">
+                <input type="submit" name="submit" value="submit">
             </div>
         </form>
         <br>

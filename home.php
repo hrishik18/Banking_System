@@ -72,7 +72,7 @@
 
         .mySlides {
             display: none;
-        }
+        }   
 
         .container {
             float: right;

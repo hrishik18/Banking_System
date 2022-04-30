@@ -12,8 +12,9 @@
 <body>
 
     <?php
-    $contactErr = $fnameErr = $lnameErr = $addhErr = $panErr = $dobErr = $cityErr = $emailErr = "";
-    $fname = $lname = $contact = $addh = $pan = $city = $email =  $dob = "";
+    include 'includes/dbconnect.php';
+    $contactErr = $fnameErr = $lnameErr = $addhErr  = $dobErr = $cityErr = $emailErr = "";
+    $fname = $lname = $contact = $addh  = $city = $email =  $dob = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
@@ -32,6 +33,14 @@
                 $lnameErr = "Only alphabets and white space are allowed";
             }
         }
+        if (empty($_POST["city"])) {
+            $cityErr = "city is required";
+        } else {
+            $city = input_data($_POST["city"]);
+            if (!preg_match("/^[a-zA-Z ]*$/", $city)) {
+                $cityErr = "Only alphabets and white space are allowed";
+            }
+        }
         if (empty($_POST["contact"])) {
             $contactErr = "Mobile no is required";
         } else {
@@ -43,6 +52,18 @@
             //check mobile no length should not be less and greator than 10  
             if (strlen($contact) != 10) {
                 $contactErr = "Mobile no must contain 10 digits.";
+            }
+        }
+        if (empty($_POST["addh"])) {
+            $addhErr = "Aadhar card number is required";
+        } else {
+            $addh = input_data($_POST["addh"]);
+ 
+            if (!preg_match("/^[0-9]*$/", $addh)) {
+                $addhErr = "Only numeric value is allowed.";
+            } 
+            if (strlen($addh) < 12) {
+                $addhErr = "Must contain upto 11 digits.";
             }
         }
         if (empty($_POST["email"])) {
@@ -122,7 +143,7 @@
             </span>
             </br>
             <div id="submit">
-                <input type="submit" name="submit" value="Submit">
+                <input type="submit" name="submit" value="submit">
             </div>
         </form>
         <br>
