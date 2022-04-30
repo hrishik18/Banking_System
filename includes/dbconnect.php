@@ -5,12 +5,12 @@ function OpenCon()
  $dbuser = "root";
  $dbpass = "K)tB@D8vZ)JEQ(NK";
  $db = "bank";
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+ $con = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $con -> error);
  
- return $conn;
+ return $con;
  }
  
-function CloseCon($conn)
+function CloseCon($con)
  {
- $conn -> close();
+ $con -> close();
  }

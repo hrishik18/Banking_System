@@ -10,26 +10,27 @@
 </head>
 
 <body>
-
+    
     <?php
+    include 'includes/dbconnect.php';
     $ifcsErr = $branchErr = $benidErr = "";
     $ifcs = $branch  = $benid =  "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["branch"])) {
             $branchErr = "Branch is required";
         } else {
-            $name = input_data($_POST["branch"]);
+            $branch = input_data($_POST["branch"]);
 
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            if (!preg_match("/^[a-zA-Z ]*$/", $branch)) {
                 $branchErr = "Only alphabets and white space are allowed";
             }
         }
         if (empty($_POST["ifcs"])) {
-            $ifcsErr = "last Name is required";
+            $ifcsErr = "IFCS code is required";
         } else {
-            $name = input_data($_POST["ifcs"]);
-            if (!preg_match("[^A-Za-z0-9]+/", $name)) {
-                $ifcsErr = "Only alphabets and numerics are allowed";
+            $ifcs = input_data($_POST["ifcs"]);
+            if (!preg_match("/^[0-9]*$/", $ifcs)) {
+                $ifcsErr = "Only numerics are allowed";
             }
         }
         if (empty($_POST["benid"])) {
@@ -41,7 +42,7 @@
             }
         }
         if (empty($_POST["pamt"])) {
-            $pamtErr = "Max limit is required";
+            $pamtErr = "amount is required";
         } else {
             $pamt = input_data($_POST["pamt"]);
             // check if mobile no is well-formed  
@@ -90,7 +91,7 @@
             <span class="error"> <?php echo $branchErr; ?> </span>
             <br></br>
             <div id="submit">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" name="submit">
             </div>
         </form>
         <br>
@@ -99,6 +100,18 @@
 
     </div>
     </div>
+    <?php
+    if (isset($_POST['submit'])) {
+        $con = OpenCon();
+        $insert = "INSERT INTO beneficary(`ben_id`, `branch`,`ifsc_code`,`max_limit`) VALUES ('$benid','$branch','$ifcs',0)";
+        $query = mysqli_query($con, $insert);
+         
+        if ($query) {
+            echo "<script> alert('Transaction Successful');
+        </script>";
+        }
+    }
+    ?>
 </body>
 
 </html>

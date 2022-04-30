@@ -17,17 +17,17 @@
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
         } else {
-            $name = input_data($_POST["fname"]);
+            $fname = input_data($_POST["fname"]);
 
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            if (!preg_match("/^[a-zA-Z ]*$/", $fname)) {
                 $fnameErr = "Only alphabets and white space are allowed";
             }
         }
         if (empty($_POST["lname"])) {
             $lnameErr = "last Name is required";
         } else {
-            $name = input_data($_POST["lname"]);
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $lname = input_data($_POST["lname"]);
+            if (!preg_match("/^[a-zA-Z ]*$/", $lname)) {
                 $lnameErr = "Only alphabets and white space are allowed";
             }
         }
