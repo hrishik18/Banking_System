@@ -8,20 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
     <style>
-        .error {
-            color: black;
-            font-size: medium;
-            font-weight: bolder;
-            font-family: "Times New Roman", Times, serif;
-            animation: fadeOut 2s;
-            animation-delay: 3s;
-            -webkit-animation-fill-mode: forwards;
-        }
-
-        @keyframes fadeOut {
-    from {opacity: 1;}
-    to {opacity: 0;}
-}
+        
     </style>
 </head>
 
