@@ -1,7 +1,7 @@
 body {
     background-image: url("../images/reg.png");
     background-repeat: no-repeat;
-    background-size: 1540px 754px; 
+    background-size: 1540px 754px;
    }
 
 .container
@@ -18,19 +18,19 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
-   
+
 }
 input[type=text], select, textarea{
     padding: 9px;
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 input[type=date], select, textarea{
     padding: 7px;
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 label{
@@ -59,7 +59,7 @@ input[type=submit] {
 }
 
 #submit{
-    position: absolute; 
+    position: absolute;
     bottom: 30px;
     margin-left: 45%;
     margin-top: 20%;

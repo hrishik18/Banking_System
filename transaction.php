@@ -44,7 +44,7 @@ while ($row=mysqli_fetch_assoc($select_query)) {
 <td ><?php echo $row['ben_id'] ?></td>
 <td ><?php echo $row['ben_name']?></td>
 <td ><?php echo $row['branch']?></td>
-<td><a> <button type="button" class="btn">Transfer</button></a></td> 
+<td><a> <button type="button" class="btn">Transfer</button></a></td>
 </tr>
 <?php
 }

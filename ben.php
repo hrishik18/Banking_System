@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    
+
     <?php
     include 'includes/dbconnect.php';
     $ifcsErr = $branchErr = $benidErr = $ben_nameErr ="";
