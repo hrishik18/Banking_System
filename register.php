@@ -13,8 +13,8 @@
 
     <?php
     include 'includes/dbconnect.php';
-    $contactErr = $fnameErr = $lnameErr = $addhErr  = $dobErr = $cityErr = $balErr= "";
-    $fname = $lname = $contact = $addh  = $city = $dob = $bal="";
+    $contactErr = $fnameErr = $lnameErr = $addhErr  = $dobErr = $cityErr = $balErr = "";
+    $fname = $lname = $contact = $addh  = $city = $dob = $bal = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
@@ -67,10 +67,10 @@
             $addhErr = "Aadhar card number is required";
         } else {
             $addh = input_data($_POST["addh"]);
- 
+
             if (!preg_match("/^[0-9]*$/", $addh)) {
                 $addhErr = "Only numeric value is allowed.";
-            } 
+            }
         }
         if (empty($_POST["dob"])) {
             $dobErr = "DOB is required";
@@ -159,19 +159,17 @@
     <?php
     if (isset($_POST['submit'])) {
         $con = OpenCon();
-        $insert = "INSERT INTO customer('f_name`,`l_name`,`dob`,`contact`,`aadhar_num`,`city`,`balance`) VALUES ('$fname' , '$lname' , '$dob' , $contact ,$addh, '$city' ,$bal)";
+        $insert = "INSERT INTO customer(`f_name`,`l_name`,`dob`,`contact`,`aadhar_num`,`city`,`balance`) VALUES ('$fname' , '$lname' , '$dob' , $contact ,$addh, '$city' ,$bal)";
 
-         try{
+        try {
             $query = mysqli_query($con, $insert);
             // if ($query) {
             //     echo "<script> alert('Account made succesfully!');
             // </script>";
             // }
-         }
-        catch(Exception $e) {
-            echo 'Message: ' .$e->getMessage();
-          }
-
+        } catch (Exception $e) {
+            echo 'Message: ' . $e->getMessage();
+        }
     }
     ?>
 
