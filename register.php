@@ -3,7 +3,7 @@
 
 <head>
     <title>Register</title>
-    <link rel="stylesheet" href="styles/reg.css">
+    <link rel="stylesheet" href="./styles/reg.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
@@ -13,15 +13,15 @@
 
     <?php
     include 'includes/dbconnect.php';
-    $contactErr = $fnameErr = $lnameErr = $addhErr  = $dobErr = $cityErr = $emailErr = "";
-    $fname = $lname = $contact = $addh  = $city = $email =  $dob = "";
+    $contactErr = $fnameErr = $lnameErr = $addhErr  = $dobErr = $cityErr = $balErr= "";
+    $fname = $lname = $contact = $addh  = $city = $dob = $bal="";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
         } else {
             $fname = input_data($_POST["fname"]);
 
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            if (!preg_match("/^[a-zA-Z ]*$/", $fname)) {
                 $fnameErr = "Only alphabets and white space are allowed";
             }
         }
@@ -54,6 +54,15 @@
                 $contactErr = "Mobile no must contain 10 digits.";
             }
         }
+        if (empty($_POST["balance"])) {
+            $balErr = "Balance is required";
+        } else {
+            $bal = input_data($_POST["balance"]);
+            // check if mobile no is well-formed  
+            if (!preg_match("/^[0-9]*$/", $contact)) {
+                $balErr = "Only numeric value is allowed.";
+            }
+        }
         if (empty($_POST["addh"])) {
             $addhErr = "Aadhar card number is required";
         } else {
@@ -62,18 +71,6 @@
             if (!preg_match("/^[0-9]*$/", $addh)) {
                 $addhErr = "Only numeric value is allowed.";
             } 
-            if (strlen($addh) < 12) {
-                $addhErr = "Must contain upto 11 digits.";
-            }
-        }
-        if (empty($_POST["email"])) {
-            $emailErr = "Email is required";
-        } else {
-            $email = input_data($_POST["email"]);
-            // check if e-mail address is well-formed
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailErr = "Invalid email format";
-            }
         }
         if (empty($_POST["dob"])) {
             $dobErr = "DOB is required";
@@ -111,14 +108,14 @@
             <span class="error">
                 <?php echo $lnameErr; ?>
             </span>
+            <br>
             <div class="row">
-                <label for="birthday"><b>Date of birth: </b></label>
+                <label for="birthday">Date of birth: </label>
                 <input type="date" id="birthday" name="dob">
             </div>
             <span class="error">
                 <?php echo $dobErr; ?>
             </span>
-            <br></br>
             <div class="row">
                 <label for="Contact">Contact: </label>
                 <input type="text" id="Contact" name="contact" placeholder="Enter..">
@@ -126,6 +123,7 @@
             <span class="error">
                 <?php echo $contactErr; ?>
             </span>
+            <br>
             <div class="row">
                 <label for="Age">Aadhar card no. </label>
                 <input type="text" id="Age" name="addh" placeholder="Enter..">
@@ -133,15 +131,23 @@
             <span class="error">
                 <?php echo $addhErr; ?>
             </span>
-            <br></br>
+            <br>
             <div class="row">
-                <label for="Age">city: </label>
+                <label for="Age">City: </label>
                 <input type="text" id="Age" name="city" placeholder="Enter..">
             </div>
+            <br>
             <span class="error">
                 <?php echo $cityErr; ?>
             </span>
-            </br>
+            <div class="row">
+                <label for="balance">Balance: </label>
+                <input type="text" id="balance" name="balance" placeholder="Enter..">
+            </div>
+            <span class="error">
+                <?php echo $balErr; ?>
+            </span>
+            <br>
             <div id="submit">
                 <input type="submit" name="submit" value="submit">
             </div>
@@ -152,7 +158,20 @@
 
     <?php
     if (isset($_POST['submit'])) {
-        //add in data base 
+        $con = OpenCon();
+        $insert = "INSERT INTO customer('f_name`,`l_name`,`dob`,`contact`,`aadhar_num`,`city`,`balance`) VALUES ('$fname' , '$lname' , '$dob' , $contact ,$addh, '$city' ,$bal)";
+
+         try{
+            $query = mysqli_query($con, $insert);
+            // if ($query) {
+            //     echo "<script> alert('Account made succesfully!');
+            // </script>";
+            // }
+         }
+        catch(Exception $e) {
+            echo 'Message: ' .$e->getMessage();
+          }
+
     }
     ?>
 

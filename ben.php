@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transaction</title>
+    <title>Beneficiary</title>
     <link rel="stylesheet" href="./styles/ben.css">
 </head>
 
@@ -13,8 +13,8 @@
     
     <?php
     include 'includes/dbconnect.php';
-    $ifcsErr = $branchErr = $benidErr = "";
-    $ifcs = $branch  = $benid =  "";
+    $ifcsErr = $branchErr = $benidErr = $ben_nameErr ="";
+    $ifcs = $branch  = $benid =  $ben_name="";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["branch"])) {
             $branchErr = "Branch is required";
@@ -23,6 +23,15 @@
 
             if (!preg_match("/^[a-zA-Z ]*$/", $branch)) {
                 $branchErr = "Only alphabets and white space are allowed";
+            }
+        }
+        if (empty($_POST["ben_name"])) {
+            $ben_nameErr = "Name is required";
+        } else {
+            $ben_name = input_data($_POST["ben_name"]);
+
+            if (!preg_match("/^[a-zA-Z ]*$/", $ben_name)) {
+                $ben_nameErr = "Only alphabets and white space are allowed";
             }
         }
         if (empty($_POST["ifcs"])) {
@@ -79,6 +88,12 @@
             <span class="error"> <?php echo $benidErr; ?> </span>
             <br></br>
             <div class="row">
+                <label for="ben_name"><b>Name: </b></label>
+                <input type="text" id="ben_name" name="ben_name" placeholder="Enter..">
+            </div>
+            <span class="error"> <?php echo $ben_nameErr; ?> </span>
+            <br></br>
+            <div class="row">
                 <label for="Contact"><b>IFSC code: </b></label>
                 <input type="text" id="Contact" name="ifcs" placeholder="Enter..">
             </div>
@@ -103,11 +118,11 @@
     <?php
     if (isset($_POST['submit'])) {
         $con = OpenCon();
-        $insert = "INSERT INTO beneficary(`ben_id`, `branch`,`ifsc_code`,`max_limit`) VALUES ('$benid','$branch','$ifcs',0)";
+        $insert = "INSERT INTO beneficary(`ben_id`, `branch`,`ifsc_code`,`max_limit`,`ben_name`) VALUES ('$benid','$branch','$ifcs',0,'$ben_name')";
         $query = mysqli_query($con, $insert);
          
         if ($query) {
-            echo "<script> alert('Transaction Successful');
+            echo "<script> alert('Your beneficiary has been added succesfully!');
         </script>";
         }
     }
