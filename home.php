@@ -98,7 +98,7 @@
   }
 
   img {
-    height: 300px;
+    height: 500px;
     width: 1270px;
     margin-right: 0;
     padding-left: 275px
@@ -126,7 +126,7 @@
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 5s;
   }
 
   @-webkit-keyframes fade {
@@ -158,19 +158,19 @@
 
   <div class="slideshow-container">
     <div class="mySlides fade">
-    <a href="http://localhost/BMS/creditcard.php"><img src="images\1.png"></a>
+    <a href="creditcard.php"><img src="images\1.png"></a>
     </div>
 
     <div class="mySlides fade" usemap="#deb">
-    <a href="http://localhost/BMS/debitcard.php"><img src="images\2.png"></a>
+    <a href="debitcard.php"><img src="images\2.png"></a>
     </div>
 
     <div class="mySlides fade" usemap="#loan">
-    <a href="http://localhost/BMS/loan.php"><img src="images\3.png"></a>
+    <a href="loan.php"><img src="images\3.png"></a>
     </div>
 
     <div class="mySlides fade" usemap="#fd">
-    <a href="http://localhost/BMS/fd.php"><img src="images\4.png"></a>
+    <a href="fd.php"><img src="images\4.png"></a>
     </div>
 
   </div>
