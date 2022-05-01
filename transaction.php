@@ -2,7 +2,7 @@
 include 'includes/dbconnect.php';
 $select="SELECT * FROM `beneficary`";
 $con=OpenCon();
-$select_query=mysqli_query($con,$select);
+$select_query=mysqli_query($con, $select);
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +37,9 @@ $select_query=mysqli_query($con,$select);
 </tr>
 </thead>
 <tbody>
-<?php 
-while($row=mysqli_fetch_assoc($select_query)){
-?>
+<?php
+while ($row=mysqli_fetch_assoc($select_query)) {
+    ?>
 <tr style="color:black;font-family: 'Questrial', sans-serif; " >
 <td ><?php echo $row['ben_id'] ?></td>
 <td ><?php echo $row['ben_name']?></td>

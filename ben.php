@@ -54,7 +54,7 @@
             $pamtErr = "amount is required";
         } else {
             $pamt = input_data($_POST["pamt"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $pamt)) {
                 $pamtErr = "Only numeric value is allowed.";
             }
@@ -62,7 +62,7 @@
                 $pamtErr = "Cant be negative";
             }
         }
-        //custid is auto filled 
+        //custid is auto filled
     }
     function input_data($data)
     {
@@ -120,7 +120,7 @@
         $con = OpenCon();
         $insert = "INSERT INTO beneficary(`ben_id`, `branch`,`ifsc_code`,`max_limit`,`ben_name`) VALUES ('$benid','$branch','$ifcs',0,'$ben_name')";
         $query = mysqli_query($con, $insert);
-         
+
         if ($query) {
             echo "<script> alert('Your beneficiary has been added succesfully!');
         </script>";

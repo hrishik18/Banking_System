@@ -45,11 +45,11 @@
             $contactErr = "Mobile no is required";
         } else {
             $contact = input_data($_POST["contact"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $contact)) {
                 $contactErr = "Only numeric value is allowed.";
             }
-            //check mobile no length should not be less and greator than 10  
+            //check mobile no length should not be less and greator than 10
             if (strlen($contact) != 10) {
                 $contactErr = "Mobile no must contain 10 digits.";
             }
@@ -58,7 +58,7 @@
             $balErr = "Balance is required";
         } else {
             $bal = input_data($_POST["balance"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $contact)) {
                 $balErr = "Only numeric value is allowed.";
             }
@@ -67,15 +67,15 @@
             $addhErr = "Aadhar card number is required";
         } else {
             $addh = input_data($_POST["addh"]);
- 
+
             if (!preg_match("/^[0-9]*$/", $addh)) {
                 $addhErr = "Only numeric value is allowed.";
-            } 
+            }
         }
         if (empty($_POST["dob"])) {
             $dobErr = "DOB is required";
         }
-        //custid is auto filled 
+        //custid is auto filled
     }
     function input_data($data)
     {
@@ -161,17 +161,15 @@
         $con = OpenCon();
         $insert = "INSERT INTO customer('f_name`,`l_name`,`dob`,`contact`,`aadhar_num`,`city`,`balance`) VALUES ('$fname' , '$lname' , '$dob' , $contact ,$addh, '$city' ,$bal)";
 
-         try{
+        try {
             $query = mysqli_query($con, $insert);
             // if ($query) {
             //     echo "<script> alert('Account made succesfully!');
             // </script>";
             // }
-         }
-        catch(Exception $e) {
+        } catch (Exception $e) {
             echo 'Message: ' .$e->getMessage();
-          }
-
+        }
     }
     ?>
 
