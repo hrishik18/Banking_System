@@ -75,10 +75,9 @@
         }
         if (empty($_POST["dob"])) {
             $dobErr = "DOB is required";
-        }
-        else{
-        $dob=$_POST["dob"];
-        $dob = date("Y-m-d", strtotime($dob));  
+        } else {
+            $dob = $_POST["dob"];
+            $dob = date("Y-m-d", strtotime($dob));
         }
         //custid is auto filled 
     }
@@ -164,14 +163,15 @@
     <?php
     if (isset($_POST['submit'])) {
         $con = OpenCon();
-        $id=$_SESSION['usr_id'];
-      $insert="UPDATE customer SET `f_name`='$fname' ,`l_name`='$lname',`dob`='$dob',`contact`='$contact',`aadhar_num`='$addh',`city`='$city',`balance`='$bal' WHERE `cust_id`='$id' ";
+        $id = $_SESSION['usr_id'];
+        $insert = "UPDATE customer SET `f_name`='$fname' ,`l_name`='$lname',`dob`='$dob',`contact`='$contact',`aadhar_num`='$addh',`city`='$city',`balance`='$bal' WHERE `cust_id`='$id' ";
 
         $query = mysqli_query($con, $insert);
         if ($query) {
             echo "<script> alert('Account made succesfully!');
         </script>";
         }
+        header("Location: home.php");
     }
     ?>
 
