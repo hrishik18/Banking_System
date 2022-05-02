@@ -17,8 +17,6 @@
 <body>
   <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
   <div class="container">
-  </div>
-</body>
 <div class="wrapper">
   <div class="sidenav">
     <h1><b>KJSC BANK</b></h1>
