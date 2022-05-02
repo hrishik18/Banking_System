@@ -76,6 +76,10 @@
         if (empty($_POST["dob"])) {
             $dobErr = "DOB is required";
         }
+        else{
+        $dob=$_POST["dob"];
+        $dob = date("Y-m-d", strtotime($dob));  
+        }
         //custid is auto filled 
     }
     function input_data($data)
@@ -160,7 +164,9 @@
     <?php
     if (isset($_POST['submit'])) {
         $con = OpenCon();
-        $insert = "INSERT INTO customer(`f_name`,`l_name`,`dob`,`contact`,`aadhar_num`,`city`,`balance`) VALUES ('$fname' , '$lname' , '$dob' , $contact , '$addh'  , '$city' ,'$bal')";
+        $id=$_SESSION['usr_id'];
+      $insert="UPDATE customer SET `f_name`='$fname' ,`l_name`='$lname',`dob`='$dob',`contact`='$contact',`aadhar_num`='$addh',`city`='$city',`balance`='$bal' WHERE `cust_id`='$id' ";
+
         $query = mysqli_query($con, $insert);
         if ($query) {
             echo "<script> alert('Account made succesfully!');

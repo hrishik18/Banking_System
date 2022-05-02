@@ -45,7 +45,7 @@ $select_query = mysqli_query($con, $select);
                                 <td><?php echo $row['ben_id'] ?></td>
                                 <td><?php echo $row['ben_name'] ?></td>
                                 <td><?php echo $row['branch'] ?></td>
-                                <td><a> <button type="button" class="btn">Transfer</button></a></td>
+                                <td><a href="transfer.php?id= <?php echo $row['ben_id'] ; ?>"> <button type="button" class="btn">Transfer</button></a></td> 
                             </tr>
                         <?php
                         }
