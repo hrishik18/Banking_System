@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">BMU BANK</a>
+                <a class="navbar-brand" href="#">KJSC BANK</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -66,7 +66,7 @@ if (isset($_POST['login'])) {
                         <legend>Login</legend>
 
                         <div class="form-group">
-                            <label for="name">username</label>
+                            <label for="name">Username</label>
                             <input type="text" name="username" placeholder="Your username" required class="form-control" autofocus />
                         </div>
 
