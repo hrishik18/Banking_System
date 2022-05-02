@@ -7,19 +7,23 @@ if (isset($_SESSION['usr_id']) != "") {
 
 include 'includes/dbconnect.php';
 
-if (isset($_POST['login'])) {
+//check if form is submitted
+if (isset($_POST['register'])) {
     $con = OpenCon();
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
-    $result = mysqli_query($con, "SELECT * FROM customer WHERE username = '" . $username . "' and password = '" . md5($password) . "'");
+    $result = mysqli_query($con, "INSERT INTO customer(username,password) VALUES ('" . $username . "','" . md5($password) . "')");
 
-    if ($row = mysqli_fetch_array($result)) {
-        $_SESSION['usr_id'] = $row['cust_id'];
-
-        header("Location: register.php");
-    } else {
-        $errormsg = "Incorrect username or Password!!!";
-        // header("Location: register.php");
+    // if ($row = mysqli_fetch_array($result)) {
+    //     $_SESSION['usr_id'] = $row['id'];
+    //     header("Location: register.php");
+    // } else {
+    //     $errormsg = "Incorrect username or Password!!!";
+    // }
+    if ($result) {
+        echo "<script> alert('Account made succesfully!');
+        </script>";
+        header("Location: login.php");
     }
 }
 ?>
@@ -28,7 +32,7 @@ if (isset($_POST['login'])) {
 <html>
 
 <head>
-    <title> Bank </title>
+    <title>BMU Bank</title>
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -46,12 +50,14 @@ if (isset($_POST['login'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">BMU BANK</a>
+                <a class="navbar-brand" href="#">BANKKKK</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.php">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="login.php">Login</a></li>
+                    <li><a href="register.php">register</a></li>
+                    <li><a href="contact.php">Contact us</a></li>
                 </ul>
             </div>
         </div>
@@ -67,7 +73,7 @@ if (isset($_POST['login'])) {
 
                         <div class="form-group">
                             <label for="name">username</label>
-                            <input type="text" name="username" placeholder="Your username" required class="form-control" autofocus />
+                            <input type="text" name="username" placeholder="Your username" required class="form-control" />
                         </div>
 
                         <div class="form-group">
@@ -76,7 +82,7 @@ if (isset($_POST['login'])) {
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" name="login" value="Login" class="btn btn-primary" />
+                            <input type="submit" name="register" value="register" class="btn btn-primary" />
                         </div>
                     </fieldset>
                 </form>

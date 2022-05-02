@@ -12,6 +12,7 @@
 <body>
 
     <?php
+    session_start();
     include 'includes/dbconnect.php';
     $contactErr = $fnameErr = $lnameErr = $addhErr  = $dobErr = $cityErr = $balErr = "";
     $fname = $lname = $contact = $addh  = $city = $dob = $bal = "";
