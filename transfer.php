@@ -1,5 +1,6 @@
 <?php
 include 'includes/dbconnect.php';
+session_start();
 $sid=$_GET['id'];
 $select = "SELECT * FROM beneficary where ben_id=$sid";
 $con=OpenCon();
