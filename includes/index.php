@@ -3,4 +3,3 @@ include 'dbconnect.php';
 $conn = OpenCon();
 echo "Connected Successfully";
 
-?>
