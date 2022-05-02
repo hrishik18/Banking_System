@@ -57,6 +57,7 @@
                 $maxlimitErr = "Cant be negative";
             }
         }
+        $validf = new DateTime();
         //custid is auto filled 
     }
     function input_data($data)
@@ -109,7 +110,15 @@
 
     <?php
     if (isset($_POST['submit'])) {
-        //add in data base 
+        $id = $_SESSION['usr_id'];
+        $insert = "UPDATE customer SET `f_name`='$fname' ,`l_name`='$lname',`dob`='$dob',`contact`='$contact',`aadhar_num`='$addh',`city`='$city',`balance`='$bal' WHERE `cust_id`='$id' ";
+
+        $query = mysqli_query($con, $insert);
+        if ($query) {
+            echo "<script> alert('credit card made succesfully!');
+        </script>";
+        }
+        header("Location: v_cards.php");
     }
     ?>
 
