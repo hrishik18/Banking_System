@@ -4,7 +4,7 @@ session_start();
 if(isset($_SESSION['usr_id'])) {
 	session_destroy();
 	unset($_SESSION['usr_id']);
-	header("Location: home.php");
+	header("Location: user.php");
 } else {
-	header("Location: home.php");
+	header("Location: user.php");
 }

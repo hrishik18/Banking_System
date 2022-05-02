@@ -1,0 +1,18 @@
+body {
+    background-image: url(../images/vcardimg.jpeg);
+    background-repeat: no-repeat;
+    background-size: 1540px 754px; 
+   }
+
+   .container
+{
+    text-align:center;
+    background-color:#adade3;
+    height: 500px;      
+    margin-top: 50px;
+    padding-top:3px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}

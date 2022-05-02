@@ -28,8 +28,8 @@
       <div class="dropdown">
         <button class="dropbtn" id="cred">Credit Card</button>
         <div class="dropdown-content" id="cred_cont">
-          <a href="credit_card_form.html">Apply</a>
-          <a href="credit_card_form.html">View</a>
+          <a href="creditcard.php">Apply</a>
+          <a href="v_cards.php">View</a>
         </div>
       </div>
       </div>
@@ -37,8 +37,8 @@
       <div class="dropdown">
         <button class="dropbtn" id="deb">Debit Card</button>
         <div class="dropdown-content" id="cred_cont">
-          <a href="debit_card_form.html">Apply</a>
-          <a href="debit_card_form.html">View</a>
+          <a href="debitcard.php">Apply</a>
+          <a href="v_cards.php">View</a>
         </div>
       </div>
       </div>
@@ -51,8 +51,8 @@
         <div class="dropdown">
           <button class="dropbtn" id="fd">Fixed Deposit</button>
           <div class="dropdown-content" id="cred_cont">
-            <a href="fd_form.html">Apply</a>
-            <a href="fd_form.html">View</a>
+            <a href="fd.php">Apply</a>
+            <a href="fd.php">View</a>
           </div>
         </div>
         </div>
@@ -60,8 +60,8 @@
         <div class="dropdown">
           <button class="dropbtn" id="loan">Loan</button>
           <div class="dropdown-content" id="cred_cont">
-            <a href="loan_form.html">Apply</a>
-            <a href="loan_form.html">View</a>
+            <a href="loan.php">Apply</a>
+            <a href="loan.php">View</a>
           </div>
         </div>
         </div>
