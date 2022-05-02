@@ -45,11 +45,11 @@
             $contactErr = "Mobile no is required";
         } else {
             $contact = input_data($_POST["contact"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $contact)) {
                 $contactErr = "Only numeric value is allowed.";
             }
-            //check mobile no length should not be less and greator than 10  
+            //check mobile no length should not be less and greator than 10
             if (strlen($contact) != 10) {
                 $contactErr = "Mobile no must contain 10 digits.";
             }
@@ -58,7 +58,7 @@
             $balErr = "Balance is required";
         } else {
             $bal = input_data($_POST["balance"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $contact)) {
                 $balErr = "Only numeric value is allowed.";
             }
@@ -74,12 +74,11 @@
         }
         if (empty($_POST["dob"])) {
             $dobErr = "DOB is required";
+        } else {
+            $dob=$_POST["dob"];
+            $dob = date("Y-m-d", strtotime($dob));
         }
-        else{
-        $dob=$_POST["dob"];
-        $dob = date("Y-m-d", strtotime($dob));  
-        }
-        //custid is auto filled 
+        //custid is auto filled
     }
     function input_data($data)
     {
@@ -164,7 +163,7 @@
     if (isset($_POST['submit'])) {
         $con = OpenCon();
         $id=$_SESSION['usr_id'];
-      $insert="UPDATE customer SET `f_name`='$fname' ,`l_name`='$lname',`dob`='$dob',`contact`='$contact',`aadhar_num`='$addh',`city`='$city',`balance`='$bal' WHERE `cust_id`='$id' ";
+        $insert="UPDATE customer SET `f_name`='$fname' ,`l_name`='$lname',`dob`='$dob',`contact`='$contact',`aadhar_num`='$addh',`city`='$city',`balance`='$bal' WHERE `cust_id`='$id' ";
 
         $query = mysqli_query($con, $insert);
         if ($query) {

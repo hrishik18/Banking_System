@@ -81,8 +81,8 @@ if (isset($_POST['login'])) {
                     </fieldset>
                 </form>
                 <span class="text-danger"><?php if (isset($errormsg)) {
-                                                echo $errormsg;
-                                            } ?></span>
+    echo $errormsg;
+} ?></span>
             </div>
         </div>
 
