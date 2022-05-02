@@ -57,7 +57,7 @@
             <a href="fd_form.html">View</a>
           </div>
         </div>
-        </div>
+      </div>
       <div class="column">
         <div class="dropdown">
           <button class="dropbtn" id="loan">Loan</button>
@@ -241,5 +241,4 @@ if (!event.target.matches('.dropbtn')) {
 }
   </script>
 </body>
-
 </html>
