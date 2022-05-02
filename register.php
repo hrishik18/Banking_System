@@ -159,16 +159,11 @@
     <?php
     if (isset($_POST['submit'])) {
         $con = OpenCon();
-        $insert = "INSERT INTO customer(`f_name`,`l_name`,`dob`,`contact`,`aadhar_num`,`city`,`balance`) VALUES ('$fname' , '$lname' , '$dob' , $contact ,$addh, '$city' ,$bal)";
-
-        try {
-            $query = mysqli_query($con, $insert);
-            // if ($query) {
-            //     echo "<script> alert('Account made succesfully!');
-            // </script>";
-            // }
-        } catch (Exception $e) {
-            echo 'Message: ' . $e->getMessage();
+        $insert = "INSERT INTO customer(`f_name`,`l_name`,`dob`,`contact`,`aadhar_num`,`city`,`balance`) VALUES ('$fname' , '$lname' , '$dob' , $contact , '$addh'  , '$city' ,'$bal')";
+        $query = mysqli_query($con, $insert);
+        if ($query) {
+            echo "<script> alert('Account made succesfully!');
+        </script>";
         }
     }
     ?>
