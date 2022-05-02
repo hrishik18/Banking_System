@@ -1,7 +1,7 @@
 <?php
 include 'includes/dbconnect.php';
-$sid=$_GET['ben_id'];
-$select = "SELECT * FROM bank where ben_id=$sid";
+$sid=$_GET['id'];
+$select = "SELECT * FROM beneficary where ben_id=$sid";
 $con=OpenCon();
 $select_query=mysqli_query($con,$select);
 $row = mysqli_fetch_assoc($select_query);
@@ -68,15 +68,17 @@ $amount =0;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!--Latest compiled and minified JavaScript--> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="style1.css">
-    <title>THIS Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles/transfer.css">
+    <title>Amount Transfer</title>
 </head>
 
 <body>
+<div class="title">
+        Transfer Money
+    </div>
 <div class="bg">
 <div class="container">
-<h2 class="text-center" style="margin-top: 100px; color: black; font-weight:bold">Transaction</h2>
 <br>
 <br>
 <div class="row">
