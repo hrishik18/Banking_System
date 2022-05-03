@@ -1,5 +1,6 @@
 
 * {box-sizing: border-box;}
+
 .mySlides {display: none;
 }
 .container
@@ -8,13 +9,16 @@
 }
 
 img{
-    float:right;
-    margin-left: 500px;
+  height: 300px;
+  width: 1270px;
+  margin-right: 0;
+  padding-left: 275px
 }
 
 
 body {
-    background-color:#b4c2c2;
+  background-color: #360e24;
+  box-sizing: border-box;
 }
 img {vertical-align: middle;}
 

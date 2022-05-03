@@ -8,21 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap"
   rel="stylesheet">
-<link rel="stylesheet" href="./styles/nav.css">
+<link rel="stylesheet" href="../styles/nav.css">
 
-
-<body>
-  <?php include('./includes/namespace.php'); ?>
-</body>
-
-
-<body>
+<body class="nav">
   <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
-  <div class="container">
-  </div>
-</body>
-
-
+  
 <div class="wrapper">
   <div class="sidenav">
     <h1><b>KJSC BANK</b></h1>
@@ -87,9 +77,6 @@
     box-sizing: border-box;
   }
 
-  .mySlides {
-    display: none;
-  }
 
   .container {
     float: right;
@@ -100,21 +87,6 @@
     box-sizing: border-box;
   }
 
-  /* Slideshow container */
-  .slideshow-container {
-    position: absolute;
-    margin: auto;
-    float: right;
-
-  }
-
-  img {
-    height: 500px;
-    width: 1270px;
-    margin-right: 0;
-    padding-left: 275px
-
-  }
 
   /* Caption text */
   .text {
@@ -126,94 +98,13 @@
     width: 100%;
     text-align: center;
   }
-
-
   .active {
     background-color: #717171;
   }
-
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 5s;
-  }
-
-  @-webkit-keyframes fade {
-    from {
-      opacity: .4
-    }
-
-    to {
-      opacity: 1
-    }
-  }
-
-  @keyframes fade {
-    from {
-      opacity: .4
-    }
-
-    to {
-      opacity: 1
-    }
-  }
-
-
-  .mySlides fade
 </style>
 </head>
 
-<body>
-
-  <div class="slideshow-container">
-    <div class="mySlides fade">
-    <a href="creditcard.php"><img src="images\1.png"></a>
-    </div>
-
-    <div class="mySlides fade" usemap="#deb">
-    <a href="debitcard.php"><img src="images\2.png"></a>
-    </div>
-
-    <div class="mySlides fade" usemap="#loan">
-    <a href="loan.php"><img src="images\3.png"></a>
-    </div>
-
-    <div class="mySlides fade" usemap="#fd">
-    <a href="fd.php"><img src="images\4.png"></a>
-    </div>
-
-  </div>
-  <br>
-
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-
   <script>
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 2000);
-    }
 
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;
