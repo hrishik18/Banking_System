@@ -1,3 +1,7 @@
+<?php include('./includes/namespace.html');
+include 'includes/sess.php';
+    include_once 'includes/dbconnect.php';
+ ?>
 <!DOCTYPE html>
 <html>
 
@@ -8,10 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-<?php include('./includes/namespace.html'); ?>
+
     <?php
     $contactErr = $fnameErr = $lnameErr  = $maxlimitErr = "";
     $fname = $lname = $contact  = $maxlimit = "";
@@ -110,10 +115,21 @@
 
     <?php
     if (isset($_POST['submit'])) {
-        //add in data base 
+        $id = $_SESSION['usr_id'];
+        $date = date('Y-m-d H:i:s');
+        $valid2 = date('Y-m-d', strtotime('+5 years'));
+        $cvv = rand(100, 999);
+        $cn = rand(1000000000, 99999999999);
+        $insert = "INSERT INTO debit_card(`cvv`,`valid_from`,`valid_through`,`max_limit`,`deb_cust_id`,`card_number`) VALUES ( $cvv ,  '$date','$valid2' , $maxlimit,$id,$cn)";
+        $con = OpenCon();
+        $query = mysqli_query($con, $insert);
+        if ($query) {
+            // header("Location: v_cards.php");
+            echo "<script> alert('Debit card made succesfully!');
+        </script>";
+        }
     }
     ?>
-
 </body>
 
 </html>

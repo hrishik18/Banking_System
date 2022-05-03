@@ -27,7 +27,6 @@ if (isset($_POST['register'])) {
 
 <head>
     <title>BMU Bank</title>
-    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -48,10 +47,9 @@ if (isset($_POST['register'])) {
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="home.php">Home</a></li>
                     <li><a href="login.php">Login</a></li>
-                    <li><a href="register.php">register</a></li>
-                    <li><a href="contact.php">Contact us</a></li>
+                    <li><a href="user.php">New user</a></li>
                 </ul>
             </div>
         </div>
@@ -63,7 +61,7 @@ if (isset($_POST['register'])) {
             <div class="col-md-4 col-md-offset-4 well">
                 <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
                     <fieldset>
-                        <legend>Login</legend>
+                        <legend>Register as New User!!!</legend>
 
                         <div class="form-group">
                             <label for="name">Username</label>

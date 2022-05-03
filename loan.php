@@ -12,7 +12,8 @@
 
 <body>
 
-<?php include('./includes/namespace.html'); ?>
+    <?php include 'includes/sess.php'; 
+    include('./includes/namespace.html'); ?>
     <?php
     include 'includes/dbconnect.php';
     $contactErr = $fnameErr = $lnameErr = $typeErr = $amtErr = $rateErr = "";
