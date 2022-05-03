@@ -43,10 +43,11 @@ $newbalance = (($row1['balance']) - $amount);
 echo $amount;
 $new = "UPDATE `customer` SET `balance` = $newbalance WHERE `customer`.`cust_id` = $from";
 mysqli_query($con,$new);
-$sender = $row1['f_name'];
-$receivr = $row2['ben_name'];
-// $insert = "INSERT INTO transfer(`sender`, `receiver`, `amount`) VALUES ('$sender','$receivr','$amount')";
-// $query=mysqli_query($con,$insert);
+$sender = $row1['cust_id'];
+$receivr = $row2['ben_id'];
+$current_date=date('Y-m-d H:i:s');
+$insert = "INSERT INTO transaction(`trans_date`, `trans_cust_id`, `trans_amt`,`trans_ben_id`) VALUES ('$current_date','$sender','$amount','$receivr')";
+$query=mysqli_query($con,$insert);
 
 if($query){
 echo "<script> alert('Transaction Successful');

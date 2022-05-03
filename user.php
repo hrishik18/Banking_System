@@ -12,18 +12,12 @@ if (isset($_POST['register'])) {
     $con = OpenCon();
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
-    $result = mysqli_query($con, "INSERT INTO customer(username,password) VALUES ('" . $username . "','" . md5($password) . "')");
-
-    // if ($row = mysqli_fetch_array($result)) {
-    //     $_SESSION['usr_id'] = $row['id'];
-    //     header("Location: register.php");
-    // } else {
-    //     $errormsg = "Incorrect username or Password!!!";
-    // }
-    if ($result) {
+    $insert = "INSERT INTO customer(username,password) VALUES ('" . $username . "','" . md5($password) . "')";
+    $query=mysqli_query($con,$insert);
+    if ($query) {
         echo "<script> alert('Account made succesfully!');
         </script>";
-        header("Location: login.php");
+        header("Location: register.php");
     }
 }
 ?>
@@ -72,7 +66,7 @@ if (isset($_POST['register'])) {
                         <legend>Login</legend>
 
                         <div class="form-group">
-                            <label for="name">username</label>
+                            <label for="name">Username</label>
                             <input type="text" name="username" placeholder="Your username" required class="form-control" />
                         </div>
 

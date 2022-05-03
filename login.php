@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
     if ($row = mysqli_fetch_array($result)) {
         $_SESSION['usr_id'] = $row['cust_id'];
 
-        header("Location: register.php");
+        header("Location: home.php");
     } else {
         $errormsg = "Incorrect username or Password!!!";
         // header("Location: register.php");

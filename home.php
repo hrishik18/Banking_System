@@ -67,6 +67,13 @@
         </div>
       </div>
 
+      <a href="ben.php"><button class="dropdown-btn" id="fd">Beneficiary</button></a>
+      <a href="transaction.php"><button class="dropdown-btn" id="fd">Transfer Money</button></a>
+      <a href="creditcard.php"><button class="dropdown-btn" id="fd">Transaction History</button></a>
+      </div>
+
+</div>
+</div>
 </div>
 <style>
 
