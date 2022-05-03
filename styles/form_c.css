@@ -17,8 +17,7 @@ body {
     font-size: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    position: relative;
-   
+    position: absolute;
 }
 input[type=text], select, textarea{
     padding: 7px;

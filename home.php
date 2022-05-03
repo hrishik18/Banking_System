@@ -19,12 +19,10 @@
 <body>
   <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
   <div class="container">
-<<<<<<< HEAD
   </div>
 </body>
 
 
-=======
 <div class="wrapper">
   <div class="sidenav">
     <h1><b>KJSC BANK</b></h1>
@@ -77,13 +75,12 @@
 
       <a href="ben.php"><button class="dropdown-btn" id="fd">Beneficiary</button></a>
       <a href="transaction.php"><button class="dropdown-btn" id="fd">Transfer Money</button></a>
-      <a href="creditcard.php"><button class="dropdown-btn" id="fd">Transaction History</button></a>
+      <a href="trans_hist.php"><button class="dropdown-btn" id="fd">Transaction History</button></a>
       </div>
 
 </div>
 </div>
 </div>
->>>>>>> 26b5bdcdced78f33795dcfe8a10ae3a42c0a1452
 <style>
 
   * {
