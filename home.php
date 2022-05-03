@@ -11,6 +11,11 @@
 
 
 <body>
+  <?php include('./includes/namespace.html'); ?>
+  <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
+  <div class="container">
+  </div>
+
     <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
     <div class="container">
     </div>
@@ -67,16 +72,86 @@
             </div>
         </div>
 
+      <a href="ben.php"><button class="dropdown-btn" id="fd">Beneficiary</button></a>
+      <a href="transaction.php"><button class="dropdown-btn" id="fd">Transfer Money</button></a>
+      <a href="trans_hist.php"><button class="dropdown-btn" id="fd">Transaction History</button></a>
+      <a href="connect.php"><button class="dropdown-btn" id="fd">Connect</button></a>
+
         <a href="ben.php"><button class="dropdown-btn" id="fd">Beneficiary</button></a>
         <a href="transaction.php"><button class="dropdown-btn" id="fd">Transfer Money</button></a>
         <a href="trans_hist.php"><button class="dropdown-btn" id="fd">Transaction History</button></a>
         <a href="logout.php"><button class="dropdown-btn" id="logout">Logout</button></a>
+
     </div>
 
 </div>
 </div>
 </div>
 <style>
+  a #logout{
+    bottom:0px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  .container {
+    float: right;
+  }
+
+  body {
+    background-color: #360e24;
+    box-sizing: border-box;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    position: absolute;
+    margin: auto;
+    float: right
+
+  }
+
+  img {
+    height: 550px;
+    width: 1500px;
+    margin-right: 0;
+    padding-left: 275px
+
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .active {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
     a #logout {
         bottom: 0px;
     }
@@ -231,6 +306,28 @@
 
         /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
+
+function myFunction() {
+  document.getElementById("butt").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.dropbtn')) {
+
+  var dropdowns = document.getElementsByClassName("dropdown-content");
+  var i;
+  for (i = 0; i < dropdowns.length; i++) {
+    var openDropdown = dropdowns[i];
+    if (openDropdown.classList.contains('show')) {
+      openDropdown.classList.remove('show');
+    }
+  }
+}
+}
+  </script>
+
+
         function myFunction() {
             document.getElementById("butt").classList.toggle("show");
         }
