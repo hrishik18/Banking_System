@@ -4,13 +4,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./styles/form_f.css">
+<link rel="stylesheet" href="./styles/nav.css">
 <title>Fixed Deposit</title>
 
 <body>
-  <?php include('./includes/namespace.php'); ?>
-</body>
-
-<body>
+<?php include('./includes/namespace.html'); ?>
     <?php
     $contactErr = $fnameErr = $lnameErr = $custidErr = $pamtErr = $rateErr = "";
     $fname = $lname = $contact = $custid = $pamt = $time = $rate = "";

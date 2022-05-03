@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beneficiary</title>
     <link rel="stylesheet" href="./styles/ben.css">
+    <link rel="stylesheet" href="./styles/nav.css">
 </head>
 
 <body>
-    
+<?php include('./includes/namespace.html'); ?>
     <?php
     include 'includes/dbconnect.php';
     $ifcsErr = $branchErr = $benidErr = $ben_nameErr ="";
