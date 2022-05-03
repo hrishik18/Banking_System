@@ -13,7 +13,7 @@ if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $insert = "INSERT INTO customer(username,password) VALUES ('" . $username . "','" . md5($password) . "')";
-    $query=mysqli_query($con,$insert);
+    $query=mysqli_query($con, $insert);
     if ($query) {
         echo "<script> alert('Account made succesfully!');
         </script>";
@@ -81,8 +81,8 @@ if (isset($_POST['register'])) {
                     </fieldset>
                 </form>
                 <span class="text-danger"><?php if (isset($errormsg)) {
-                                                echo $errormsg;
-                                            } ?></span>
+    echo $errormsg;
+} ?></span>
             </div>
         </div>
 

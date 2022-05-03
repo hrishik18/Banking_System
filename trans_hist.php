@@ -3,7 +3,7 @@ include 'includes/dbconnect.php';
 session_start();
 $select="SELECT * FROM `transaction` WHERE `trans_cust_id`= '" . $_SESSION['usr_id'] . "'";
 $con=OpenCon();
-$select_query=mysqli_query($con,$select);
+$select_query=mysqli_query($con, $select);
 ?>
 
 <!DOCTYPE html>
@@ -38,11 +38,11 @@ $select_query=mysqli_query($con,$select);
 </tr>
 </thead>
 <tbody>
-<?php 
+<?php
 $row=mysqli_fetch_array($select_query);
 
 
-while($row=mysqli_fetch_assoc($select_query)){
+while ($row=mysqli_fetch_assoc($select_query)) {
     // $select_f="SELECT ben_name FROM beneficary WHERE ben_id='" . $row['trans_ben_id'] . "' ";
     // $select_query1=mysqli_query($con,$select_f);
     // $select_s="SELECT fname FROM customer WHERE cust_id= '" . $_SESSION['usr_id'] . "' ";
