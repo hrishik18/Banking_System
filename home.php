@@ -19,10 +19,71 @@
 <body>
   <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
   <div class="container">
+<<<<<<< HEAD
   </div>
 </body>
 
 
+=======
+<div class="wrapper">
+  <div class="sidenav">
+    <h1><b>KJSC BANK</b></h1>
+    <a href="home.html" class="active"><b>Home</b></a>
+    <button class="dropdown-btn" onclick="myFunction()" id="butt"><i class="fas fa-caret-down"></i> Cards  </button>
+
+    <div class="dropdown-container">
+    <div class="column">
+      <div class="dropdown">
+        <button class="dropbtn" id="cred">Credit Card</button>
+        <div class="dropdown-content" id="cred_cont">
+          <a href="creditcard.php">Apply</a>
+          <a href="v_cards.php">View</a>
+        </div>
+      </div>
+      </div>
+    <div class="column">
+      <div class="dropdown">
+        <button class="dropbtn" id="deb">Debit Card</button>
+        <div class="dropdown-content" id="cred_cont">
+          <a href="debitcard.php">Apply</a>
+          <a href="v_cards.php">View</a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <button class="dropdown-btn" onclick="myFunction()" id="butt"><i class="fas fa-caret-down"></i> FD/Loan
+    </button>
+    <div class="dropdown-container">
+      <div class="column">
+        <div class="dropdown">
+          <button class="dropbtn" id="fd">Fixed Deposit</button>
+          <div class="dropdown-content" id="cred_cont">
+            <a href="fd.php">Apply</a>
+            <a href="fd.php">View</a>
+          </div>
+        </div>
+        </div>
+      <div class="column">
+        <div class="dropdown">
+          <button class="dropbtn" id="loan">Loan</button>
+          <div class="dropdown-content" id="cred_cont">
+            <a href="loan.php">Apply</a>
+            <a href="loan.php">View</a>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <a href="ben.php"><button class="dropdown-btn" id="fd">Beneficiary</button></a>
+      <a href="transaction.php"><button class="dropdown-btn" id="fd">Transfer Money</button></a>
+      <a href="creditcard.php"><button class="dropdown-btn" id="fd">Transaction History</button></a>
+      </div>
+
+</div>
+</div>
+</div>
+>>>>>>> 26b5bdcdced78f33795dcfe8a10ae3a42c0a1452
 <style>
 
   * {
@@ -51,7 +112,7 @@
   }
 
   img {
-    height: 300px;
+    height: 500px;
     width: 1270px;
     margin-right: 0;
     padding-left: 275px
@@ -79,7 +140,7 @@
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 5s;
   }
 
   @-webkit-keyframes fade {
@@ -111,19 +172,19 @@
 
   <div class="slideshow-container">
     <div class="mySlides fade">
-    <a href="http://localhost/BMS/creditcard.php"><img src="images\1.png"></a>
+    <a href="creditcard.php"><img src="images\1.png"></a>
     </div>
 
     <div class="mySlides fade" usemap="#deb">
-    <a href="http://localhost/BMS/debitcard.php"><img src="images\2.png"></a>
+    <a href="debitcard.php"><img src="images\2.png"></a>
     </div>
 
     <div class="mySlides fade" usemap="#loan">
-    <a href="http://localhost/BMS/loan.php"><img src="images\3.png"></a>
+    <a href="loan.php"><img src="images\3.png"></a>
     </div>
 
     <div class="mySlides fade" usemap="#fd">
-    <a href="http://localhost/BMS/fd.php"><img src="images\4.png"></a>
+    <a href="fd.php"><img src="images\4.png"></a>
     </div>
 
   </div>
