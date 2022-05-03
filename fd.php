@@ -36,11 +36,11 @@
             $contactErr = "Mobile no is required";
         } else {
             $contact = input_data($_POST["contact"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $contact)) {
                 $contactErr = "Only numeric value is allowed.";
             }
-            //check mobile no length should not be less and greator than 10  
+            //check mobile no length should not be less and greator than 10
             if (strlen($contact) != 10) {
                 $contactErr = "Mobile no must contain 10 digits.";
             }
@@ -49,7 +49,7 @@
             $pamtErr = "Max limit is required";
         } else {
             $pamt = input_data($_POST["pamt"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $pamt)) {
                 $pamtErr = "Only numeric value is allowed.";
             }
@@ -62,14 +62,15 @@
             $rateErr = "You forgot to select your Rate & Maturity period!";
         } else {
             $time = input_data($_POST["rate"]);
-            if ($time == "6m")
+            if ($time == "6m") {
                 $rate = 0.75;
-            elseif ($time == "1y")
+            } elseif ($time == "1y") {
                 $rate = 1.85;
-            elseif ($time == "2y")
+            } elseif ($time == "2y") {
                 $rate = 2.7;
-            else
+            } else {
                 $rate = 3.95;
+            }
         }
     }
     function input_data($data)
