@@ -8,12 +8,14 @@ include_once 'includes/dbconnect.php';
 <head>
     <title>Bank</title>
     <link rel="stylesheet" href="./styles/vcard.css">
+    <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+<?php include('./includes/namespace.html'); ?>
     <div class="col-lg-2">
         <div class="container">
             <article class="row">

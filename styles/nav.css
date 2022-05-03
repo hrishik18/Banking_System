@@ -1,4 +1,4 @@
-.sidenav {
+div.sidenav {
     height: 100%;
     width: 300px;
     position: fixed;
@@ -83,15 +83,6 @@
 color: black;
 }
   
-  .main {
-    margin-left: 200px; 
-    font-size: 20px; 
-    padding: 0px 10px;
-  }
-  
-  .active {
-    background-color: rgb(0, 0, 0);
-  }
   
  .dropdown-container {
     display: none;

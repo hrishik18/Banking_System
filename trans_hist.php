@@ -18,10 +18,12 @@ $select_query=mysqli_query($con,$select);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" href="./styles/nav.css">
     <title>THIS Bank</title>
 </head>
 
 <body style="background-color: #0000ff;">
+<?php include('./includes/namespace.html'); ?>
 <div class="bg">
 <div class="container">
 <div class="row">
