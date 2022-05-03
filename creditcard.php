@@ -11,9 +11,13 @@
 </head>
 
 <body>
-    <?php include('./includes/namespace.html'); ?>
-    <?php
-    include 'includes/dbconnect.php';
+    <?php 
+    include 'includes/sess.php';
+    include('./includes/namespace.html');
+    include 'includes/dbconnect.php'; 
+    ?> 
+
+    <?php  
     $contactErr = $fnameErr = $lnameErr = $maxlimitErr = "";
     $fname = $lname = $contact  = $maxlimit = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -59,8 +63,6 @@
                 $maxlimitErr = "Cant be negative";
             }
         }
-       
-        
     }
     function input_data($data)
     {
@@ -95,8 +97,8 @@
                 <input type="text" id="Contact" name="contact" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $contactErr; ?> </span>
-               
-              
+
+
             <div class="row">
                 <label for="Age">Maximum Limit: </label>
                 <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
@@ -114,14 +116,20 @@
     <?php
     if (isset($_POST['submit'])) {
         $id = $_SESSION['usr_id'];
-        $insert = "INSERT INTO credit_card(`cvv`,valid_from`,`valid_through`,`max_limit`,`aadhar_num`,`city`,`balance`) VALUES ('rand(100,999)' , ' new DateTime() -> format('d/m/Y')' , '$valid2' , $contact , '$addh'  , '$city' ,'$bal')";
-
+        $date = date('d/m/Y');
+        //$valid1= date("Y-m-d", strtotime($date->format('d/m/Y')));
+        $valid2 = date('d/m/Y', strtotime(' + 5 years'));
+        $cvv = rand(100, 999);
+        $insert = "INSERT INTO credit_card(`cvv`,`valid_from`,`max_limit`) VALUES ( $cvv ,  '.$date.' , $maxlimit)";
+        $con = OpenCon();
         $query = mysqli_query($con, $insert);
         if ($query) {
+            // header("Location: v_cards.php");
             echo "<script> alert('credit card made succesfully!');
         </script>";
+            
         }
-        header("Location: v_cards.php");
+        
     }
     ?>
 

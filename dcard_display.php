@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'includes/sess.php'; 
 include_once 'includes/dbconnect.php';
 ?>
 <!DOCTYPE html>

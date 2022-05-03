@@ -8,7 +8,8 @@
 <title>Fixed Deposit</title>
 
 <body>
-<?php include('./includes/namespace.html'); ?>
+    <?php include 'includes/sess.php'; 
+    include('./includes/namespace.html'); ?>
     <?php
     $contactErr = $fnameErr = $lnameErr = $custidErr = $pamtErr = $rateErr = "";
     $fname = $lname = $contact = $custid = $pamt = $time = $rate = "";

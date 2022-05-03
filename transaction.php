@@ -1,4 +1,5 @@
 <?php
+include 'includes/sess.php'; 
 include 'includes/dbconnect.php';
 $select = "SELECT * FROM `beneficary`";
 $con = OpenCon();
@@ -22,7 +23,7 @@ $select_query = mysqli_query($con, $select);
 </head>
 
 <body>
-<?php include('./includes/namespace.html'); ?>
+    <?php include('./includes/namespace.html'); ?>
     <div class="title">
         Transfer Money with secure payment gateways!
     </div>
@@ -47,7 +48,7 @@ $select_query = mysqli_query($con, $select);
                                 <td><?php echo $row['ben_id'] ?></td>
                                 <td><?php echo $row['ben_name'] ?></td>
                                 <td><?php echo $row['branch'] ?></td>
-                                <td><a href="transfer.php?id= <?php echo $row['ben_id'] ; ?>"> <button type="button" class="btn">Transfer</button></a></td> 
+                                <td><a href="transfer.php?id= <?php echo $row['ben_id']; ?>"> <button type="button" class="btn">Transfer</button></a></td>
                             </tr>
                         <?php
                         }
@@ -61,6 +62,3 @@ $select_query = mysqli_query($con, $select);
 </body>
 
 </html>
-
-
-

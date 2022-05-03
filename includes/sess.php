@@ -1,19 +1,7 @@
 <?php
-// Start the session
-session_start();
+    session_start();
+    if (!isset($_SESSION['usr_id'])) {
+        session_destroy();
+        header("Location: user.php");
+    }
 ?>
-<!DOCTYPE html>
-<html>
-
-<body>
-
-    <?php
-    // Set session variables
-    $_SESSION["favcolor"] = "green";
-    $_SESSION["favanimal"] = "cat";
-    echo "Session variables are set.";
-    ?>
-
-</body>
-
-</html>

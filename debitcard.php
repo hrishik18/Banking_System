@@ -8,11 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
-<?php include('./includes/namespace.html'); ?>
+    <?php include('./includes/namespace.html');
+    include 'includes/sess.php'; ?>
     <?php
     $contactErr = $fnameErr = $lnameErr  = $maxlimitErr = "";
     $fname = $lname = $contact  = $maxlimit = "";

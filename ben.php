@@ -11,9 +11,13 @@
 </head>
 
 <body>
-<?php include('./includes/namespace.html'); ?>
+<?php
+include('./includes/namespace.html');
+include 'includes/dbconnect.php';
+include 'includes/sess.php'; ?>
+    
     <?php
-    include 'includes/dbconnect.php';
+    
     $ifcsErr = $branchErr = $benidErr = $ben_nameErr ="";
     $ifcs = $branch  = $benid =  $ben_name="";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

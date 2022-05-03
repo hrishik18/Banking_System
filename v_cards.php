@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'includes/sess.php'; 
 include_once 'includes/dbconnect.php';
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include_once 'includes/dbconnect.php';
 </head>
 
 <body>
-<?php include('./includes/namespace.html'); ?>
+    <?php include('./includes/namespace.html'); ?>
     <div class="col-lg-2">
         <div class="container">
             <article class="row">
@@ -30,7 +30,6 @@ include_once 'includes/dbconnect.php';
                             <th>Valid from</th>
                             <th>Valid through</th>
                             <th>max limit</th>
-                            <th>Name</th>
                         </thead>
                         <?php
 
@@ -48,7 +47,6 @@ include_once 'includes/dbconnect.php';
 					        <td>' . $rows['valid_from'] . '</td>
 					        <td>' . $rows['valid_through'] . '</td>
 					        <td>' . $rows['max_limit'] . '</td>
-                            <td>' . $rows['name'] . '</td>
 					      </tr>
 					    </tbody>
 					';

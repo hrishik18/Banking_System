@@ -52,6 +52,7 @@ if (isset($_POST['login'])) {
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="home.php">Home</a></li>
                     <li><a href="login.php">Login</a></li>
+                    <li><a href="user.php">New user</a></li>
                 </ul>
             </div>
         </div>
