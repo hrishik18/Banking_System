@@ -7,6 +7,10 @@
 <title>Fixed Deposit</title>
 
 <body>
+  <?php include('./includes/namespace.php'); ?>
+</body>
+
+<body>
     <?php
     $contactErr = $fnameErr = $lnameErr = $custidErr = $pamtErr = $rateErr = "";
     $fname = $lname = $contact = $custid = $pamt = $time = $rate = "";

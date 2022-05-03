@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <?php include('./includes/namespace.php'); ?>
     <?php
     include 'includes/dbconnect.php';
     $contactErr = $fnameErr = $lnameErr = $maxlimitErr = "";
