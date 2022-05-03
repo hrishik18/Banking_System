@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!--Latest compiled and minified JavaScript--> 
+<!--Latest compiled and minified JavaScript-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./styles/transfer.css">
@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
 <form method="POST" name="send">
 <br><br>
 <label style="color: black; ">Amount to be transferred:</label>
-<input type="number" class="form-control" step="0.01" name="amount" required>   
+<input type="number" class="form-control" step="0.01" name="amount" required>
 <br><br>
 <div class="text-center" >
 <button class="btn btn-danger" name="submit" type="submit">Transfer</button>
