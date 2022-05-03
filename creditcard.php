@@ -57,8 +57,8 @@
                 $maxlimitErr = "Cant be negative";
             }
         }
-        $validf = new DateTime();
-        //custid is auto filled 
+       
+        
     }
     function input_data($data)
     {
@@ -93,7 +93,8 @@
                 <input type="text" id="Contact" name="contact" placeholder="Enter..">
             </div>
             <span class="error"> <?php echo $contactErr; ?> </span>
-
+               
+              
             <div class="row">
                 <label for="Age">Maximum Limit: </label>
                 <input type="text" id="Age" name="maxlimit" placeholder="Enter..">
@@ -111,7 +112,7 @@
     <?php
     if (isset($_POST['submit'])) {
         $id = $_SESSION['usr_id'];
-        $insert = "UPDATE customer SET `f_name`='$fname' ,`l_name`='$lname',`dob`='$dob',`contact`='$contact',`aadhar_num`='$addh',`city`='$city',`balance`='$bal' WHERE `cust_id`='$id' ";
+        $insert = "INSERT INTO credit_card(`cvv`,valid_from`,`valid_through`,`max_limit`,`aadhar_num`,`city`,`balance`) VALUES ('rand(100,999)' , ' new DateTime() -> format('d/m/Y')' , '$valid2' , $contact , '$addh'  , '$city' ,'$bal')";
 
         $query = mysqli_query($con, $insert);
         if ($query) {
