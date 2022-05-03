@@ -12,6 +12,7 @@
 
 
 <body>
+  <?php include('./includes/namespace.html'); ?>
   <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
   <div class="container">
   </div>
@@ -71,8 +72,9 @@
       <a href="ben.php"><button class="dropdown-btn" id="fd">Beneficiary</button></a>
       <a href="transaction.php"><button class="dropdown-btn" id="fd">Transfer Money</button></a>
       <a href="trans_hist.php"><button class="dropdown-btn" id="fd">Transaction History</button></a>
-      <a href="logout.php"><button class="dropdown-btn" id="logout">Logout</button></a>
-      </div>
+      <a href="connect.php"><button class="dropdown-btn" id="fd">Connect</button></a>
+
+    </div>
 
 </div>
 </div>
@@ -103,7 +105,7 @@
   .slideshow-container {
     position: absolute;
     margin: auto;
-    float: right;
+    float: right
 
   }
 
@@ -250,5 +252,8 @@ if (!event.target.matches('.dropbtn')) {
 }
 }
   </script>
+
+
+
 </body>
 </html>
