@@ -1,5 +1,6 @@
 <?php
-include 'includes/sess.php'; 
+include 'includes/sess.php';
+// include('./includes/namespace.html');
 include_once 'includes/dbconnect.php';
 ?>
 <!DOCTYPE html>
@@ -8,6 +9,8 @@ include_once 'includes/dbconnect.php';
 <head>
     <title>Bank</title>
     <link rel="stylesheet" href="./styles/vcard.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -19,20 +22,20 @@ include_once 'includes/dbconnect.php';
             <article class="row">
                 <section class="col-lg-8">
                     <div class="page-header">
-                        <h2>Cards information</h2>
+                        <h2>Debit Card information</h2>
                     </div>
                     <table class="table table-bordered">
                         <thead>
-                            <th>Credit card id</th>
+                            <th>Debit card id</th>
                             <th>CVV</th>
                             <th>Valid from</th>
                             <th>Valid through</th>
                             <th>max limit</th>
-                            <th>Name</th>
+                            <th>Card Number</th>
                         </thead>
                         <?php
 
-                        $ins_sql = "SELECT * FROM credit_card";
+                        $ins_sql = "SELECT * FROM debit_card WHERE deb_cust_id= '" . $_SESSION['usr_id'] . "' " ;
                         $con = OpenCon();
                         $run_sql = mysqli_query($con, $ins_sql);
 
@@ -41,12 +44,12 @@ include_once 'includes/dbconnect.php';
                             echo '
 					    <tbody>
 					      <tr>
-					        <td>' . $rows['cre_card_id'] . '</td>
+					        <td>' . $rows['deb_card_id'] . '</td>
 					        <td>' . $rows['cvv'] . '</td>
 					        <td>' . $rows['valid_from'] . '</td>
 					        <td>' . $rows['valid_through'] . '</td>
 					        <td>' . $rows['max_limit'] . '</td>
-                            <td>' . $rows['name'] . '</td>
+                            <td>' . $rows['card_number'] . '</td>
 					      </tr>
 					    </tbody>
 					';

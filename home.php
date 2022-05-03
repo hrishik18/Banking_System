@@ -38,7 +38,7 @@
                     <button class="dropbtn" id="deb">Debit Card</button>
                     <div class="dropdown-content" id="cred_cont">
                         <a href="debitcard.php">Apply</a>
-                        <a href="v_cards.php">View</a>
+                        <a href="dcard.php">View</a>
                     </div>
                 </div>
             </div>

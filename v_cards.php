@@ -1,6 +1,7 @@
 <?php
-include 'includes/sess.php'; 
+include 'includes/sess.php';
 include_once 'includes/dbconnect.php';
+// include('./includes/namespace.html');
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,13 +16,12 @@ include_once 'includes/dbconnect.php';
 </head>
 
 <body>
-    <?php include('./includes/namespace.html'); ?>
     <div class="col-lg-2">
         <div class="container">
             <article class="row">
                 <section class="col-lg-8">
                     <div class="page-header">
-                        <h2>Cards information</h2>
+                        <h2>Credit Card information</h2>
                     </div>
                     <table class="table table-bordered">
                         <thead>
@@ -33,7 +33,7 @@ include_once 'includes/dbconnect.php';
                         </thead>
                         <?php
 
-                        $ins_sql = "SELECT * FROM credit_card";
+                        $ins_sql = "SELECT * FROM credit_card WHERE cre_cust_id= '" . $_SESSION['usr_id'] . "' ";
                         $con = OpenCon();
                         $run_sql = mysqli_query($con, $ins_sql);
 

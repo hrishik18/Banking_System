@@ -116,11 +116,11 @@
     <?php
     if (isset($_POST['submit'])) {
         $id = $_SESSION['usr_id'];
-        $date = date('d/m/Y');
+        $date = date('Y-m-d H:i:s');
         //$valid1= date("Y-m-d", strtotime($date->format('d/m/Y')));
-        $valid2 = date('d/m/Y', strtotime(' + 5 years'));
+        $valid2 = date('Y-m-d', strtotime('+5 years'));
         $cvv = rand(100, 999);
-        $insert = "INSERT INTO credit_card(`cvv`,`valid_from`,`max_limit`) VALUES ( $cvv ,  '.$date.' , $maxlimit)";
+        $insert = "INSERT INTO credit_card(`cvv`,`valid_from`,`valid_through`,`max_limit`,`cre_cust_id`) VALUES ( $cvv ,  '$date','$valid2' , $maxlimit,$id)";
         $con = OpenCon();
         $query = mysqli_query($con, $insert);
         if ($query) {

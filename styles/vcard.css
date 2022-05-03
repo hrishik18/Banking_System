@@ -2,6 +2,7 @@ body {
     background-image: url(../images/vcardimg.jpeg);
     background-repeat: no-repeat;
     background-size: 1540px 754px; 
+ justify-content:flex-end;    
    }
 
    .container
@@ -11,9 +12,9 @@ body {
     height: 500px;      
     margin-top: 50px;
     padding-top:3px;
-    margin-left: 350px;
+    margin-left: 50px;
     font-size: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    position: relative;
+    position: absolute;
 }
