@@ -11,11 +11,6 @@
 
 
 <body>
-  <?php include('./includes/namespace.php'); ?>
-</body>
-
-
-<body>
   <script src="https://kit.fontawesome.com/c07a043b71.js" crossorigin="anonymous"></script>
   <div class="container">
   </div>
@@ -25,8 +20,8 @@
 <div class="wrapper">
   <div class="sidenav">
     <h1><b>KJSC BANK</b></h1>
-    <a href="home.html" class="active"><b>Home</b></a>
-    <button class="dropdown-btn" onclick="myFunction()" id="butt"><i class="fas fa-caret-down"></i> Cards </button>
+    <a href="home.php" class="active"><b>Home</b></a>
+    <button class="dropdown-btn" onclick="myFunction()" id="butt"><i class="fas fa-caret-down"></i> Cards  </button>
 
     <div class="dropdown-container">
       <div class="column">
@@ -81,12 +76,16 @@
       <a href="ben.php"><button class="dropdown-btn" id="fd">Beneficiary</button></a>
       <a href="transaction.php"><button class="dropdown-btn" id="fd">Transfer Money</button></a>
       <a href="trans_hist.php"><button class="dropdown-btn" id="fd">Transaction History</button></a>
+      <a href="logout.php"><button class="dropdown-btn" id="logout">Logout</button></a>
       </div>
 
 </div>
 </div>
 </div>
 <style>
+  a #logout{
+    bottom:0px;
+  }
 
   * {
     box-sizing: border-box;
@@ -114,8 +113,8 @@
   }
 
   img {
-    height: 500px;
-    width: 1270px;
+    height: 550px;
+    width: 1500px;
     margin-right: 0;
     padding-left: 275px
 

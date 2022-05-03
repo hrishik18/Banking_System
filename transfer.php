@@ -72,10 +72,12 @@ $amount =0;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./styles/transfer.css">
+    <link rel="stylesheet" href="./styles/nav.css">
     <title>Amount Transfer</title>
 </head>
 
 <body>
+<?php include('./includes/namespace.html'); ?>
 <div class="title">
         Transfer Money
     </div>
