@@ -1,7 +1,8 @@
-<?php include('./includes/namespace.html');
-include 'includes/sess.php';
-    include_once 'includes/dbconnect.php';
- ?>
+<?php 
+    include 'includes/sess.php';
+    include('./includes/namespace.html');
+    include 'includes/dbconnect.php'; 
+    ?> 
 <!DOCTYPE html>
 <html>
 

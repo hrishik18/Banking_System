@@ -1,7 +1,7 @@
 <?php
 include 'includes/sess.php'; 
 include 'includes/dbconnect.php';
-$select = "SELECT * FROM `beneficary`";
+$select = "SELECT * FROM `beneficary` WHERE `ben_cust_id`='" . $_SESSION['usr_id'] . "' ";
 $con = OpenCon();
 $select_query = mysqli_query($con, $select);
 ?>
@@ -19,7 +19,7 @@ $select_query = mysqli_query($con, $select);
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./styles/trans.css">
     <link rel="stylesheet" href="./styles/nav.css">
-    <title>Transaction</title>
+    <title>Transfer Money</title>
 </head>
 
 <body>

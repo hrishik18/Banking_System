@@ -1,3 +1,9 @@
+<?php 
+    include 'includes/sess.php';
+    include('./includes/namespace.html');
+    include 'includes/dbconnect.php'; 
+    ?> 
+
 <!DOCTYPE html>
 <html>
 
@@ -11,11 +17,6 @@
 </head>
 
 <body>
-    <?php 
-    include 'includes/sess.php';
-    include('./includes/namespace.html');
-    include 'includes/dbconnect.php'; 
-    ?> 
 
     <?php  
     $contactErr = $fnameErr = $lnameErr = $maxlimitErr = "";
@@ -120,7 +121,7 @@
         //$valid1= date("Y-m-d", strtotime($date->format('d/m/Y')));
         $valid2 = date('Y-m-d', strtotime('+5 years'));
         $cvv = rand(100, 999);
-        $insert = "INSERT INTO credit_card(`cvv`,`valid_from`,`valid_through`,`max_limit`,`cre_cust_id`) VALUES ( $cvv ,  '$date','$valid2' , $maxlimit,$id)";
+        $insert = "INSERT INTO credit_card(`cvv`,`valid_from`,`valid_through`,`max_limit`,`cre_cust_id`) VALUES ( $cvv ,  '$date','$valid2' , '$maxlimit','$id')";
         $con = OpenCon();
         $query = mysqli_query($con, $insert);
         if ($query) {

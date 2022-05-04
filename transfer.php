@@ -82,14 +82,14 @@ if (($amount)<0) { echo '<script>' ; echo ' alert("Oops! Negative values cannot 
             Transfer Money
         </div>
         <div class="bg">
-            <div class="container">
+            <div class="container" style="margin-left: 525px;">
                 <br>
                 <br>
                 <div class="row">
                     <form method="POST" name="send">
                         <br><br>
-                        <label style="color: black; ">Amount to be transferred:</label>
-                        <input type="number" class="form-control" step="0.01" name="amount" required>
+                        <label style="color: black; ">Amount to be transferred to</label> 
+                        <input type="number" style="color: black;" class="form-control" step="0.01" name="amount" required>
                         <br><br>
                         <div class="text-center">
                             <button class="btn btn-danger" name="submit" type="submit">Transfer</button>
