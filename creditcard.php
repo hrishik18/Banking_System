@@ -24,19 +24,27 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
+            echo "<script> alert('first name required');
+            </script>";
         } else {
             $fname = input_data($_POST["fname"]);
 
             if (!preg_match("/^[a-zA-Z ]*$/", $fname)) {
                 $fnameErr = "Only alphabets and white space are allowed";
+                echo "<script> alert('Enter only alphabets ');
+                </script>";
             }
         }
         if (empty($_POST["lname"])) {
             $lnameErr = "last Name is required";
+            echo "<script> alert('last name required');
+            </script>";
         } else {
             $lname = input_data($_POST["lname"]);
             if (!preg_match("/^[a-zA-Z ]*$/", $lname)) {
                 $lnameErr = "Only alphabets and white space are allowed";
+                echo "<script> alert('Enter only alphabets ');
+                </script>";
             }
         }
         if (empty($_POST["contact"])) {
