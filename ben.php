@@ -1,3 +1,9 @@
+<?php
+include 'includes/dbconnect.php';
+include 'includes/sess.php';
+include('./includes/namespace.html');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +17,6 @@
 </head>
 
 <body>
-<?php
-include('./includes/namespace.html');
-include 'includes/dbconnect.php';
-include 'includes/sess.php'; ?>
     
     <?php
     
@@ -47,27 +49,6 @@ include 'includes/sess.php'; ?>
                 $ifcsErr = "Only numerics are allowed";
             }
         }
-        if (empty($_POST["benid"])) {
-            $benidErr = "Beneficiary id is required";
-        } else {
-            $benid = input_data($_POST["benid"]);
-            if (!preg_match("/^[0-9]*$/", $benid)) {
-                $benidErr = "Only numeric value is allowed.";
-            }
-        }
-        if (empty($_POST["pamt"])) {
-            $pamtErr = "amount is required";
-        } else {
-            $pamt = input_data($_POST["pamt"]);
-            // check if mobile no is well-formed  
-            if (!preg_match("/^[0-9]*$/", $pamt)) {
-                $pamtErr = "Only numeric value is allowed.";
-            }
-            if ($pamt < 0) {
-                $pamtErr = "Cant be negative";
-            }
-        }
-        //custid is auto filled 
     }
     function input_data($data)
     {
@@ -85,13 +66,6 @@ include 'includes/sess.php'; ?>
     <div class="container">
         <br>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-
-            <div class="row">
-                <label for="benid"><b>Beneficiary ID: </b></label>
-                <input type="text" id="benid" name="benid" placeholder="Enter..">
-            </div>
-            <span class="error"> <?php echo $benidErr; ?> </span>
-            <br></br>
             <div class="row">
                 <label for="ben_name"><b>Name: </b></label>
                 <input type="text" id="ben_name" name="ben_name" placeholder="Enter..">
@@ -123,7 +97,8 @@ include 'includes/sess.php'; ?>
     <?php
     if (isset($_POST['submit'])) {
         $con = OpenCon();
-        $insert = "INSERT INTO beneficary(`ben_id`, `branch`,`ifsc_code`,`max_limit`,`ben_name`) VALUES ('$benid','$branch','$ifcs',0,'$ben_name')";
+        $id= $_SESSION['usr_id'];
+        $insert = "INSERT INTO beneficary(`branch`,`ifsc_code`,`max_limit`,`ben_name`,`ben_cust_id`) VALUES ('$branch','$ifcs',0,'$ben_name',$id)";
         $query = mysqli_query($con, $insert);
          
         if ($query) {

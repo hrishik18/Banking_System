@@ -4,6 +4,7 @@
 <head>
     <title>Register</title>
     <link rel="stylesheet" href="./styles/reg.css">
+    <link rel="stylesheet" href="./styles/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Questrial&display=swap" rel="stylesheet">
@@ -14,6 +15,7 @@
     <?php
     include 'includes/sess.php'; 
     include 'includes/dbconnect.php';
+    include 'includes/namespace.html';
     $contactErr = $fnameErr = $lnameErr = $addhErr = $dobErr = $cityErr = $balErr = "";
     $fname = $lname = $contact = $addh = $city = $dob = $bal = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

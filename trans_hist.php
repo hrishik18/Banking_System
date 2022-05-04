@@ -17,43 +17,36 @@ $select_query=mysqli_query($con,$select);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!--Latest compiled and minified JavaScript-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="style1.css">
     <link rel="stylesheet" href="./styles/nav.css">
-    <title>THIS Bank</title>
+    <link rel="stylesheet" href="./styles/transfer.css">
+    <title>Transaction History</title>
 </head>
-
-<body style="background-color: #0000ff;">
+<body>
     <?php include('./includes/namespace.html'); ?>
     <div class="bg">
-        <div class="container">
+        <div class="container" style="width: 800px; margin-left: 450px;">
             <div class="row">
-                <h2 class="text-center" style="margin-top: 100px; color: #ffff00;">History</h2>
+                <h2 class="text-center"><b>History</b></h2>
                 <br>
 
-                <div class="col-md-offset-2 col-md-8">
+                <div>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Receiver</th>
+                                <th>Transaction ID</th>
+                                <th>Date</th>
+                                <th>Your ID</th>
+                                <th>Beneficiary ID</th>
                                 <th>Amount</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $row = mysqli_fetch_array($select_query);
-
-
                             while ($row = mysqli_fetch_assoc($select_query)) {
-                                // $select_f="SELECT ben_name FROM beneficary WHERE ben_id='" . $row['trans_ben_id'] . "' ";
-                                // $select_query1=mysqli_query($con,$select_f);
-                                // $select_s="SELECT fname FROM customer WHERE cust_id= '" . $_SESSION['usr_id'] . "' ";
-                                // $select_query2=mysqli_query($con,$select_s);
-                                // $row1=mysqli_fetch_array($select_query1);
-                                // $row2=mysqli_fetch_array($select_query2);
                             ?>
-                                <tr style="color: black">
+                                <tr style="color: black; margin-left: 10px;">
+                                   <td> </td>
                                     <td><?php echo $row['trans_id'] ?></td>
                                     <td><?php echo $row['trans_date'] ?></td>
                                     <td><?php echo $row['trans_cust_id'] ?></td>

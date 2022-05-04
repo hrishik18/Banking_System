@@ -9,10 +9,10 @@ include 'includes/dbconnect.php';
 
 //check if form is submitted
 if (isset($_POST['register'])) {
-    $con = OpenCon();
-    $username = mysqli_real_escape_string($con, $_POST['username']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
-    $insert = "INSERT INTO customer(username,password) VALUES ('" . $username . "','" . md5($password) . "')";
+    $con = OpenCon();                  
+    $username =$_POST['username'];
+    $password =$_POST['password'];
+    $insert = "INSERT INTO customer(`username`,`password`) VALUES ('" . $username . "','" . md5($password) . "')";
     $query=mysqli_query($con,$insert);
     if ($query) {
         echo "<script> alert('Account made succesfully!');
@@ -43,13 +43,11 @@ if (isset($_POST['register'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">BANKKKK</a>
+                <a class="navbar-brand" href="#">KJSC BANK</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.php">Home</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="user.php">New user</a></li>
+                    <li><a href="login.php"><b>Login</b></a></li>
                 </ul>
             </div>
         </div>
@@ -61,7 +59,7 @@ if (isset($_POST['register'])) {
             <div class="col-md-4 col-md-offset-4 well">
                 <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
                     <fieldset>
-                        <legend>Register as New User!!!</legend>
+                        <legend>Register as a new user to KJSC BANK</legend>
 
                         <div class="form-group">
                             <label for="name">Username</label>
