@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-
+        <a href="register.php"><button class="dropdown-btn" id="fd">Create Account</button></a>
         <a href="customer.php"><button class="dropdown-btn" id="fd">Account Details</button></a>
         <a href="ben.php"><button class="dropdown-btn" id="fd">Beneficiary</button></a>
         <a href="transaction.php"><button class="dropdown-btn" id="fd">Transfer Money</button></a>
@@ -79,7 +79,7 @@
         <a href="register.php"><button class="dropdown-btn" id="fd">Create Account</button></a>
 
     </div>
-    <a href="logout.php"><button class="dropdown-btn"  id="logout">Logout</button></a>
+    <a href="logout.php"><button class="dropdown-btn" id="logout">Logout</button></a>
 </div>
 
 </div>
@@ -154,14 +154,7 @@
     @-webkit-keyframes fade {
         from {
             opacity: .4 a #logout {
-                color: red;
-                position: absolute;
-                left: 0%;
                 bottom: 0px;
-                align-content: center;
-                z-index: 5;
-                width: 300px;
-                padding-left: 8%;
             }
 
             * {

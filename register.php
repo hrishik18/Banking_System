@@ -1,3 +1,8 @@
+ <?php
+include 'includes/sess.php';
+include 'includes/dbconnect.php';
+include 'includes/namespace.html';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,82 +18,80 @@
 <body>
 
     <?php
-    include 'includes/sess.php'; 
-    include 'includes/dbconnect.php';
-    include 'includes/namespace.html';
+
     $contactErr = $fnameErr = $lnameErr = $addhErr = $dobErr = $cityErr = $balErr = "";
     $fname = $lname = $contact = $addh = $city = $dob = $bal = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["fname"])) {
-    $fnameErr = "first Name is required";
-    } else {
-    $fname = input_data($_POST["fname"]);
+        if (empty($_POST["fname"])) {
+            $fnameErr = "first Name is required";
+        } else {
+            $fname = input_data($_POST["fname"]);
 
-    if (!preg_match("/^[a-zA-Z ]*$/", $fname)) {
-    $fnameErr = "Only alphabets and white space are allowed";
-    }
-    }
-    if (empty($_POST["lname"])) {
-    $lnameErr = "last Name is required";
-    } else {
-    $lname = input_data($_POST["lname"]);
-    if (!preg_match("/^[a-zA-Z ]*$/", $lname)) {
-    $lnameErr = "Only alphabets and white space are allowed";
-    }
-    }
-    if (empty($_POST["city"])) {
-    $cityErr = "city is required";
-    } else {
-    $city = input_data($_POST["city"]);
-    if (!preg_match("/^[a-zA-Z ]*$/", $city)) {
-    $cityErr = "Only alphabets and white space are allowed";
-    }
-    }
-    if (empty($_POST["contact"])) {
-    $contactErr = "Mobile no is required";
-    } else {
-    $contact = input_data($_POST["contact"]);
-    // check if mobile no is well-formed
-    if (!preg_match("/^[0-9]*$/", $contact)) {
-    $contactErr = "Only numeric value is allowed.";
-    }
-    //check mobile no length should not be less and greator than 10
-    if (strlen($contact) != 10) {
-    $contactErr = "Mobile no must contain 10 digits.";
-    }
-    }
-    if (empty($_POST["balance"])) {
-    $balErr = "Balance is required";
-    } else {
-    $bal = input_data($_POST["balance"]);
-    // check if mobile no is well-formed
-    if (!preg_match("/^[0-9]*$/", $contact)) {
-    $balErr = "Only numeric value is allowed.";
-    }
-    }
-    if (empty($_POST["addh"])) {
-    $addhErr = "Aadhar card number is required";
-    } else {
-    $addh = input_data($_POST["addh"]);
+            if (!preg_match("/^[a-zA-Z ]*$/", $fname)) {
+                $fnameErr = "Only alphabets and white space are allowed";
+            }
+        }
+        if (empty($_POST["lname"])) {
+            $lnameErr = "last Name is required";
+        } else {
+            $lname = input_data($_POST["lname"]);
+            if (!preg_match("/^[a-zA-Z ]*$/", $lname)) {
+                $lnameErr = "Only alphabets and white space are allowed";
+            }
+        }
+        if (empty($_POST["city"])) {
+            $cityErr = "city is required";
+        } else {
+            $city = input_data($_POST["city"]);
+            if (!preg_match("/^[a-zA-Z ]*$/", $city)) {
+                $cityErr = "Only alphabets and white space are allowed";
+            }
+        }
+        if (empty($_POST["contact"])) {
+            $contactErr = "Mobile no is required";
+        } else {
+            $contact = input_data($_POST["contact"]);
+            // check if mobile no is well-formed
+            if (!preg_match("/^[0-9]*$/", $contact)) {
+                $contactErr = "Only numeric value is allowed.";
+            }
+            //check mobile no length should not be less and greator than 10
+            if (strlen($contact) != 10) {
+                $contactErr = "Mobile no must contain 10 digits.";
+            }
+        }
+        if (empty($_POST["balance"])) {
+            $balErr = "Balance is required";
+        } else {
+            $bal = input_data($_POST["balance"]);
+            // check if mobile no is well-formed
+            if (!preg_match("/^[0-9]*$/", $contact)) {
+                $balErr = "Only numeric value is allowed.";
+            }
+        }
+        if (empty($_POST["addh"])) {
+            $addhErr = "Aadhar card number is required";
+        } else {
+            $addh = input_data($_POST["addh"]);
 
-    if (!preg_match("/^[0-9]*$/", $addh)) {
-    $addhErr = "Only numeric value is allowed.";
-    }
-    }
-    if (empty($_POST["dob"])) {
-    $dobErr = "DOB is required";
-    } else {
-    $dob = $_POST["dob"];
-    $dob = date("Y-m-d", strtotime($dob));
-    }
-    //custid is auto filled
+            if (!preg_match("/^[0-9]*$/", $addh)) {
+                $addhErr = "Only numeric value is allowed.";
+            }
+        }
+        if (empty($_POST["dob"])) {
+            $dobErr = "DOB is required";
+        } else {
+            $dob = $_POST["dob"];
+            $dob = date("Y-m-d", strtotime($dob));
+        }
+        //custid is auto filled
     }
     function input_data($data)
     {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
     ?>
 
@@ -173,7 +176,6 @@
             echo "<script> alert('Account made succesfully!');
         </script>";
         }
-        header("Location: home.php");
     }
     ?>
 
