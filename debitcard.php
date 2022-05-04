@@ -24,11 +24,15 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fname"])) {
             $fnameErr = "first Name is required";
+            echo "<script> alert('first name required');
+            </script>";
         } else {
             $fname = input_data($_POST["fname"]);
 
             if (!preg_match("/^[a-zA-Z ]*$/", $fname)) {
                 $fnameErr = "Only alphabets and white space are allowed";
+                echo "<script> alert('only alphabets');
+                </script>";
             }
         }
         if (empty($_POST["lname"])) {
@@ -126,8 +130,10 @@
         $query = mysqli_query($con, $insert);
         if ($query) {
             // header("Location: v_cards.php");
+            if($fnameErr=='' && $lnameErr==''){
             echo "<script> alert('Debit card made succesfully!');
         </script>";
+            }
         }
     }
     ?>
