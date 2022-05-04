@@ -19,7 +19,7 @@ include('./includes/namespace.html');
 <body>
     
     <?php
-    
+
     $ifcsErr = $branchErr = $benidErr = $ben_nameErr ="";
     $ifcs = $branch  = $benid =  $ben_name="";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -100,7 +100,7 @@ include('./includes/namespace.html');
         $id= $_SESSION['usr_id'];
         $insert = "INSERT INTO beneficary(`branch`,`ifsc_code`,`max_limit`,`ben_name`,`ben_cust_id`) VALUES ('$branch','$ifcs',0,'$ben_name',$id)";
         $query = mysqli_query($con, $insert);
-         
+
         if ($query) {
             echo "<script> alert('Your beneficiary has been added succesfully!');
         </script>";

@@ -1,9 +1,9 @@
 <?php
-include 'includes/sess.php'; 
+include 'includes/sess.php';
 include 'includes/dbconnect.php';
 $select="SELECT * FROM `transaction` WHERE `trans_cust_id`= '" . $_SESSION['usr_id'] . "'";
 $con=OpenCon();
-$select_query=mysqli_query($con,$select);
+$select_query=mysqli_query($con, $select);
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ $select_query=mysqli_query($con,$select);
                         <tbody>
                             <?php
                             while ($row = mysqli_fetch_assoc($select_query)) {
-                            ?>
+                                ?>
                                 <tr style="color: black; margin-left: 10px;">
                                    <td> </td>
                                     <td><?php echo $row['trans_id'] ?></td>

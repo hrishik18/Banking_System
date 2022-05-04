@@ -9,11 +9,11 @@ include 'includes/dbconnect.php';
 
 //check if form is submitted
 if (isset($_POST['register'])) {
-    $con = OpenCon();                  
+    $con = OpenCon();
     $username =$_POST['username'];
     $password =$_POST['password'];
     $insert = "INSERT INTO customer(`username`,`password`) VALUES ('" . $username . "','" . md5($password) . "')";
-    $query=mysqli_query($con,$insert);
+    $query=mysqli_query($con, $insert);
     if ($query) {
         echo "<script> alert('Account made succesfully!');
         </script>";
@@ -77,8 +77,8 @@ if (isset($_POST['register'])) {
                     </fieldset>
                 </form>
                 <span class="text-danger"><?php if (isset($errormsg)) {
-                                                echo $errormsg;
-                                            } ?></span>
+    echo $errormsg;
+} ?></span>
             </div>
         </div>
 
