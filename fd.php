@@ -32,11 +32,11 @@
             $rateErr = "Rate is required";
         } else {
             $rate = input_data($_POST["rate"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $rate)) {
                 $rateErr = "Only numeric value is allowed.";
             }
-            //check mobile no length should not be less and greator than 10  
+            //check mobile no length should not be less and greator than 10
             if (strlen($rate) != 10) {
                 $rateErr = "Mobile no must contain 10 digits.";
             }
@@ -45,7 +45,7 @@
             $maxlimitErr = "Max limit is required";
         } else {
             $maxlimit = input_data($_POST["maxlimit"]);
-            // check if mobile no is well-formed  
+            // check if mobile no is well-formed
             if (!preg_match("/^[0-9]*$/", $maxlimit)) {
                 $maxlimitErr = "Only numeric value is allowed.";
             }
@@ -53,7 +53,7 @@
                 $maxlimitErr = "Cant be negative";
             }
         }
-        //custid is auto filled 
+        //custid is auto filled
     }
     function input_data($data)
     {
@@ -64,7 +64,7 @@
     }
 
     if (isset($_POST['submit'])) {
-        //add in data base 
+        //add in data base
     }
     ?>
 
