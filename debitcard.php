@@ -2,7 +2,7 @@
     include 'includes/sess.php';
     include('./includes/namespace.html');
     include 'includes/dbconnect.php';
-    ?> 
+    ?>
 <!DOCTYPE html>
 <html>
 

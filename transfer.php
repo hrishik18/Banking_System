@@ -88,7 +88,7 @@ if (isset($_POST['submit'])) {
                 <div class="row">
                     <form method="POST" name="send">
                         <br><br>
-                        <label style="color: black; ">Amount to be transferred to</label> 
+                        <label style="color: black; ">Amount to be transferred to</label>
                         <input type="number" style="color: black;" class="form-control" step="0.01" name="amount" required>
                         <br><br>
                         <div class="text-center">
